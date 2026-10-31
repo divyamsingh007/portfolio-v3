@@ -126,9 +126,7 @@
 
 .skill-card {
   position: relative;
-  min-height: 350px;
   padding: 34px 32px 42px;
-  overflow: hidden;
   background: transparent;
   transition: background-color 0.4s ease;
 }
@@ -295,7 +293,6 @@
 
 @media (max-width: 1023px) {
   .skill-card {
-    min-height: 330px;
     padding: 30px 25px 38px;
   }
 
@@ -315,7 +312,6 @@
   }
 
   .skill-card {
-    min-height: auto;
     padding: 30px 20px 38px;
     border-right: none;
   }
@@ -338,18 +334,18 @@
   }
 
   .skill-item {
-    min-height: 36px;
     padding: 7px 10px;
-    font-size: 10px;
-  }
-
-  .skill-item img {
-    width: 16px;
-    height: 16px;
+    font-size: 11px;
   }
 
   .skills-footer {
     padding-top: 24px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  #skills .skill-card:nth-child(odd) {
+    border-right: 1px solid #dedede;
   }
 }
 
@@ -854,7 +850,6 @@
         }
 
         #skills .skill-card {
-          min-height: 0;
           padding: 1.5rem 0 2rem;
           border-right: 0;
         }
@@ -870,9 +865,8 @@
 
         #skills .skill-item {
           max-width: 100%;
-          white-space: normal;
-          overflow-wrap: anywhere;
-          min-height: 44px;
+          min-height: 38px;
+          white-space: nowrap;
         }
 
         #experience {
@@ -1899,7 +1893,7 @@
 
 
     <!-- SKILLS GRID -->
-    <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-neutral-300">
+    <div class="skills-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-neutral-300">
 
       <!-- 01 FRONTEND -->
       <article class="skill-card lg:border-r border-b border-neutral-300">
@@ -1918,42 +1912,42 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" loading="lazy">
+            <img src="assets/icons/skills/html5.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             HTML5
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="" loading="lazy">
+            <img src="assets/icons/skills/css.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             CSS3
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="lazy">
+            <img src="assets/icons/skills/javascript.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             JavaScript
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy">
+            <img src="assets/icons/skills/typescript.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             TypeScript
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" loading="lazy">
-            React.js
+            <img src="assets/icons/skills/react.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
+            React
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="" loading="lazy">
+            <img src="assets/icons/skills/nextdotjs.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Next.js
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" loading="lazy">
+            <img src="assets/icons/skills/tailwindcss.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Tailwind CSS
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="" loading="lazy">
+            <img src="assets/icons/skills/bootstrap.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Bootstrap
           </span>
 
@@ -1980,43 +1974,35 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" loading="lazy">
+            <img src="assets/icons/skills/nodedotjs.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Node.js
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/express/000000" alt="" loading="lazy">
+            <img src="assets/icons/skills/express.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Express.js
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy">
+            <img src="assets/icons/skills/python.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Python
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/jsonwebtokens/000000" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             JWT Authentication
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             REST APIs
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/mongoose/880000" alt="" loading="lazy">
+            <img src="assets/icons/skills/mongoose.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Mongoose
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/nodemailer/000000" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             Nodemailer
-          </span>
-
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/apiflow/000000" alt="" loading="lazy">
-            API Integration
           </span>
 
         </div>
@@ -2042,12 +2028,12 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="" loading="lazy">
+            <img src="assets/icons/skills/mongodb.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             MongoDB
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/mongoose/880000" alt="" loading="lazy">
+            <img src="assets/icons/skills/mongoose.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Mongoose
           </span>
 
@@ -2074,57 +2060,54 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy">
+            <img src="assets/icons/skills/python.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Python
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" loading="lazy">
+            <img src="assets/icons/skills/pytorch.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             PyTorch
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="" loading="lazy">
+            <img src="assets/icons/skills/tensorflow.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             TensorFlow
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/opencv/5C3EE8" alt="" loading="lazy">
+            <img src="assets/icons/skills/opencv.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             OpenCV
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/mediapipe/0097A7" alt="" loading="lazy">
+            <img src="assets/icons/skills/mediapipe.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             MediaPipe
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="" loading="lazy">
+            <img src="assets/icons/skills/huggingface.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Hugging Face Transformers
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/numpy/013243" alt="" loading="lazy">
+            <img src="assets/icons/skills/numpy.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             NumPy
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="" loading="lazy">
+            <img src="assets/icons/skills/scikitlearn.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Scikit-learn
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/computervision/000000" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             Computer Vision
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/deep-learning/000000" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             Deep Learning
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/multimodal/000000" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             Multimodal AI
           </span>
 
@@ -2151,47 +2134,46 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/git/F05032" alt="" loading="lazy">
+            <img src="assets/icons/skills/git.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Git
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/github/181717" alt="" loading="lazy">
+            <img src="assets/icons/skills/github.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             GitHub
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="" loading="lazy">
+            <img src="assets/icons/skills/figma.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Figma
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/linux/FCC624" alt="" loading="lazy">
+            <img src="assets/icons/skills/linux.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Linux
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="" loading="lazy">
+            <img src="assets/icons/skills/ubuntu.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Ubuntu
           </span>
 
-          <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" loading="lazy">
+          <span class="skill-item skill-item-text">
             VS Code
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/vercel/000000" alt="" loading="lazy">
+            <img src="assets/icons/skills/vercel.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Vercel
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" loading="lazy">
+            <img src="assets/icons/skills/jupyter.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Jupyter Notebook
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="" loading="lazy">
+            <img src="assets/icons/skills/postman.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Postman
           </span>
 
@@ -2218,23 +2200,23 @@
         <div class="skill-items">
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy">
+            <img src="assets/icons/skills/python.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             Python
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="lazy">
+            <img src="assets/icons/skills/javascript.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             JavaScript
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy">
+            <img src="assets/icons/skills/typescript.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
             TypeScript
           </span>
 
           <span class="skill-item">
-            <img src="https://cdn.simpleicons.org/rust/000000" alt="" loading="lazy">
-            Rust
+            <img src="assets/icons/skills/rust.svg" alt="" width="17" height="17" loading="lazy" decoding="async">
+            Rust · actively learning
           </span>
 
           <span class="skill-item skill-item-text">
@@ -2249,6 +2231,9 @@
             System Design
           </span>
 
+          <span class="skill-item skill-item-text">
+            UI / UX
+          </span>
         </div>
 
         <div class="skill-card-line"></div>
