@@ -212,7 +212,7 @@ export async function initExperienceSection() {
 
       window.scrollTo({
         top: targetScroll,
-        behavior: 'smooth'
+        behavior: reducedMotionQuery.matches ? 'auto' : 'smooth'
       });
     });
   });

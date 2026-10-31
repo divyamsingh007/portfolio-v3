@@ -53,7 +53,7 @@
         },
         "sameAs": [
           "https://github.com/divyamsingh007",
-          "https://www.linkedin.com/in/divyamsingh-duhoon/",
+          "https://www.linkedin.com/in/divyam-singh-duhoon/",
           "https://www.instagram.com/btwimdivyam/"
         ]
       }
@@ -92,13 +92,235 @@
     />
     <link rel="stylesheet" href="FlexCarousel.css" />
     <style>
+      :root {
+        --color-ink: #0d0d0d;
+        --color-paper: #fafafa;
+        --color-text: #121212;
+        --color-secondary: #737373;
+        --color-muted: #a3a3a3;
+        --border-light: #e5e5e5;
+        --border-medium: #d4d4d4;
+        --border-dark: #303030;
+        --radius-control: 4px;
+        --radius-card: 8px;
+        --radius-pill: 9999px;
+        --transition-fast: 180ms;
+        --transition-normal: 300ms;
+        --transition-smooth: 450ms;
+        --transition-slow: 600ms;
+        --page-padding: clamp(1rem, 4vw, 4rem);
+        --content-max-width: 1400px;
+        --navigation-height: 5.25rem;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: #fafafa;
-        color: #121212;
+        background-color: var(--color-paper);
+        color: var(--color-text);
         overflow-x: clip;
         selection-background-color: #000;
         selection-color: #fff;
+      }
+
+      .page-container {
+        width: 100%;
+        max-width: var(--content-max-width);
+        margin-inline: auto;
+        padding-inline: var(--page-padding);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: 1px solid transparent;
+        border-radius: var(--radius-control);
+        padding: 0.625rem 1.25rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        line-height: 1.25;
+        text-align: center;
+        text-transform: uppercase;
+        transition:
+          background-color var(--transition-normal) ease,
+          border-color var(--transition-normal) ease,
+          color var(--transition-normal) ease,
+          transform var(--transition-normal) ease;
+      }
+
+      .button-pill {
+        border-radius: var(--radius-pill);
+      }
+
+      .button-primary {
+        border-color: var(--color-ink);
+        background-color: var(--color-ink);
+        color: var(--color-paper);
+      }
+
+      .button-primary:hover {
+        border-color: #262626;
+        background-color: #262626;
+      }
+
+      .button-secondary {
+        border-color: var(--border-medium);
+        background-color: transparent;
+        color: var(--color-ink);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--color-ink);
+        background-color: var(--color-ink);
+        color: var(--color-paper);
+      }
+
+      .button-on-dark {
+        border-color: var(--color-paper);
+        background-color: var(--color-paper);
+        color: var(--color-ink);
+      }
+
+      .button-on-dark:hover {
+        border-color: #e5e5e5;
+        background-color: #e5e5e5;
+      }
+
+      .button-outline-on-dark {
+        border-color: #737373;
+        background-color: transparent;
+        color: var(--color-paper);
+      }
+
+      .button-outline-on-dark:hover {
+        border-color: var(--color-paper);
+        background-color: rgb(255 255 255 / 8%);
+      }
+
+      .button-quiet-on-dark {
+        border-color: #525252;
+        background-color: transparent;
+        color: #d4d4d4;
+      }
+
+      .button-quiet-on-dark:hover {
+        border-color: #a3a3a3;
+        color: var(--color-paper);
+      }
+
+      .icon-button {
+        display: inline-flex;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-medium);
+        border-radius: var(--radius-pill);
+        color: var(--color-secondary);
+        transition:
+          background-color var(--transition-fast) ease,
+          border-color var(--transition-fast) ease,
+          color var(--transition-fast) ease;
+      }
+
+      .icon-button:hover {
+        border-color: var(--color-ink);
+        background-color: var(--color-paper);
+        color: var(--color-ink);
+      }
+
+      .icon-button-on-dark {
+        border-color: #525252;
+        color: #d4d4d4;
+      }
+
+      .icon-button-on-dark:hover {
+        border-color: var(--color-paper);
+        background-color: rgb(255 255 255 / 8%);
+        color: var(--color-paper);
+      }
+
+      .form-control {
+        min-height: 44px;
+        border: 1px solid var(--border-medium);
+        border-radius: var(--radius-control);
+        transition: border-color var(--transition-fast) ease;
+      }
+
+      .form-control:focus {
+        border-color: var(--color-ink);
+      }
+
+      #contact-form .form-control[type="text"],
+      #contact-form .form-control[type="email"] {
+        border-radius: var(--radius-control);
+      }
+
+      .modal-card {
+        border-radius: var(--radius-card);
+      }
+
+      .header-social-links a {
+        width: 44px;
+        height: 44px;
+      }
+
+      .nav-link {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+      }
+
+      .experience-hud {
+        padding-inline: max(
+          var(--page-padding),
+          calc((100vw - var(--content-max-width)) / 2 + var(--page-padding))
+        );
+      }
+
+      .mobile-drawer-content {
+        padding:
+          max(1.5rem, env(safe-area-inset-top))
+          max(1.5rem, env(safe-area-inset-right))
+          max(1.5rem, env(safe-area-inset-bottom))
+          max(1.5rem, env(safe-area-inset-left));
+      }
+
+      #home,
+      #about,
+      #skills,
+      #projects,
+      #contact {
+        scroll-margin-top: calc(
+          var(--navigation-height) + env(safe-area-inset-top)
+        );
+      }
+
+      #about > .sticky,
+      #exp-sticky-viewport {
+        top: var(--navigation-height);
+        height: calc(100dvh - var(--navigation-height));
+      }
+
+      #about .container > div:first-child {
+        height: 100%;
+      }
+
+      #desktop-navigation a[aria-current="location"] {
+        border-color: var(--border-medium);
+        color: var(--color-ink);
+      }
+
+      #mobile-drawer nav a[aria-current="location"] {
+        color: var(--color-ink);
       }
 
      /* =========================================================
@@ -119,7 +341,7 @@
 /* Grid */
 
 .skills-grid {
-  border-color: #dedede;
+  border-color: var(--border-medium);
 }
 
 /* Individual Cards */
@@ -128,7 +350,7 @@
   position: relative;
   padding: 34px 32px 42px;
   background: transparent;
-  transition: background-color 0.4s ease;
+  transition: background-color var(--transition-smooth) ease;
 }
 
 .skill-card:hover {
@@ -149,14 +371,14 @@
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.18em;
-  color: #a3a3a3;
+  color: var(--color-muted);
 }
 
 .skill-caption {
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: #a3a3a3;
+  color: var(--color-muted);
   text-align: right;
 }
 
@@ -167,9 +389,9 @@
   font-weight: 500;
   letter-spacing: -0.055em;
   line-height: 1;
-  color: #0d0d0d;
+  color: var(--color-ink);
   margin-bottom: 13px;
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-smooth) ease;
 }
 
 .skill-card:hover .skill-category-title {
@@ -182,7 +404,7 @@
   max-width: 300px;
   font-size: 12px;
   line-height: 1.7;
-  color: #888888;
+  color: var(--color-secondary);
   margin-bottom: 27px;
 }
 
@@ -207,8 +429,8 @@
   padding: 8px 12px;
 
   background: #ffffff;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-control);
 
   color: #525252;
   font-size: 11px;
@@ -219,11 +441,11 @@
   cursor: default;
 
   transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    background-color var(--transition-normal) ease,
+    border-color var(--transition-normal) ease,
+    color var(--transition-normal) ease,
+    transform var(--transition-normal) ease,
+    box-shadow var(--transition-normal) ease;
 }
 
 /* Technology Logos */
@@ -236,8 +458,8 @@
   flex-shrink: 0;
 
   transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
+    transform var(--transition-normal) ease,
+    filter var(--transition-normal) ease;
 }
 
 /* Hover Interaction */
@@ -274,7 +496,7 @@
   background-color: #0d0d0d;
 
   transition:
-    width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    width var(--transition-slow) cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .skill-card:hover .skill-card-line {
@@ -354,6 +576,12 @@
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+  .button,
+  .icon-button,
+  .nav-link {
+    transition: none;
+  }
+
   .skill-card,
   .skill-category-title,
   .skill-item,
@@ -388,6 +616,7 @@
         transform: translate3d(0, 0, 0);
       }
       .exp-panel {
+        padding-inline: var(--page-padding);
         will-change: transform, opacity;
       }
       .exp-date-bg {
@@ -568,9 +797,19 @@
         }
       }
 
-      @media (max-width: 1279px) {
+      @media (max-width: 1399px) {
         header[data-purpose="site-navigation"] .header-social-links {
           display: none;
+        }
+      }
+
+      @media (min-width: 1280px) and (max-width: 1399px) {
+        header[data-purpose="site-navigation"] {
+          column-gap: 0.75rem;
+        }
+
+        #desktop-navigation a {
+          padding-inline: 0.875rem;
         }
       }
 
@@ -581,7 +820,7 @@
         }
 
         #hero-title {
-          font-size: clamp(2.4rem, 9.5vw, 6rem);
+          font-size: clamp(1.5rem, 8vw, 6rem);
           line-height: 0.9;
         }
 
@@ -635,9 +874,9 @@
 
         #about > .sticky {
           position: sticky;
-          height: 100vh;
-          height: 100svh;
-          min-height: 100svh;
+          height: calc(100vh - var(--navigation-height));
+          height: calc(100svh - var(--navigation-height));
+          min-height: calc(100svh - var(--navigation-height));
           overflow: hidden;
         }
 
@@ -792,7 +1031,7 @@
 
         #project-modal-card {
           width: min(100%, 42rem);
-          border-radius: 1.5rem;
+          border-radius: var(--radius-card);
           padding: 1.25rem;
         }
 
@@ -836,7 +1075,6 @@
 
       @media (max-width: 767px) {
         #skills {
-          padding-inline: clamp(1rem, 6vw, 1.5rem);
           padding-block: clamp(4rem, 14vw, 6rem);
         }
 
@@ -1065,18 +1303,19 @@
     <!-- Notification Toast Container -->
     <div
       id="toast-container"
-      class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"
+      class="fixed bottom-6 right-6 z-[60] flex flex-col gap-2 pointer-events-none"
     ></div>
 
     <!-- BEGIN: Navigation Header -->
     <header
-      class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-10 lg:px-16 max-w-[1600px] mx-auto grid grid-cols-[1fr_auto_1fr] items-center"
+      class="page-container sticky top-0 z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 grid grid-cols-[1fr_auto_1fr] items-center"
       data-purpose="site-navigation"
     >
       <!-- Brand Wordmark -->
       <a
         class="group font-extrabold text-xl tracking-tight text-black flex items-center justify-self-start"
         href="#home"
+        aria-label="Divyam Singh home"
       >
         <span>DIV</span>
         <span
@@ -1086,45 +1325,48 @@
 
       <!-- Center Navigation -->
       <nav
+        id="desktop-navigation"
+        aria-label="Primary navigation"
         class="hidden lg:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
       >
         <a
           id="nav-home"
-          class="nav-link px-4 py-2 rounded-full border border-neutral-300 text-black hover:border-black transition whitespace-nowrap"
+          aria-current="location"
+          class="nav-link px-4 rounded-full border border-neutral-300 text-black hover:border-black transition-colors duration-200 whitespace-nowrap"
           href="#home"
           >HOME</a
         >
 
         <a
           id="nav-about"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          class="nav-link px-4 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition-colors duration-200 whitespace-nowrap"
           href="#about"
           >ABOUT ME</a
         >
 
         <a
           id="nav-skills"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          class="nav-link px-4 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition-colors duration-200 whitespace-nowrap"
           href="#skills"
           >SKILLS</a
         >
 
         <a
           id="nav-experience"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          class="nav-link px-4 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition-colors duration-200 whitespace-nowrap"
           href="#experience"
           >EXPERIENCE</a
         >
 
         <a
           id="nav-projects"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          class="nav-link px-4 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition-colors duration-200 whitespace-nowrap"
           href="#projects"
           >PROJECTS</a
         >
         <a
           id="nav-contact"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          class="nav-link px-4 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition-colors duration-200 whitespace-nowrap"
           href="#contact"
           >CONTACT</a
         >
@@ -1136,7 +1378,7 @@
         <a
           href="assets/Divyam_Singh_Resume.pdf"
           download="Divyam_Singh_Resume.pdf"
-          class="group flex items-center gap-2 px-3.5 h-10 rounded-full bg-black text-white border border-black hover:bg-neutral-800 transition-all duration-300"
+          class="button button-primary button-pill group px-4"
           title="Download Resume"
         >
           <span
@@ -1166,8 +1408,9 @@
         >
           <!-- Instagram -->
           <a
-            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            class="flex items-center justify-center rounded-full hover:bg-neutral-100 transition"
             href="https://www.instagram.com/btwimdivyam/"
+            aria-label="Instagram"
             target="_blank"
             rel="noopener noreferrer"
             title="Instagram"
@@ -1214,8 +1457,9 @@
 
           <!-- Codolio -->
           <a
-            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            class="flex items-center justify-center rounded-full hover:bg-neutral-100 transition"
             href="https://codolio.com/profile/divyamsingh007"
+            aria-label="Codolio"
             target="_blank"
             rel="noopener noreferrer"
             title="Codolio"
@@ -1229,8 +1473,9 @@
 
           <!-- LinkedIn -->
           <a
-            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
-            href="https://www.linkedin.com/in/divyamsingh-duhoon/"
+            class="flex items-center justify-center rounded-full hover:bg-neutral-100 transition"
+            href="https://www.linkedin.com/in/divyam-singh-duhoon/"
+            aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
             title="LinkedIn"
@@ -1249,8 +1494,9 @@
 
           <!-- GitHub -->
           <a
-            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            class="flex items-center justify-center rounded-full hover:bg-neutral-100 transition"
             href="https://github.com/divyamsingh007"
+            aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
@@ -1302,11 +1548,12 @@
       aria-modal="true"
       aria-label="Site navigation"
       aria-hidden="true"
-      onclick="if (event.target === this) toggleMobileMenu();"
+      inert
+      onclick="if (event.target === this) closeMobileMenu();"
     >
       <div
         id="mobile-drawer-content"
-        class="w-4/5 max-w-sm bg-white h-full max-h-[100dvh] overflow-y-auto overscroll-contain p-6 sm:p-8 flex flex-col justify-start gap-8 transform translate-x-full transition-transform duration-300 shadow-2xl"
+        class="mobile-drawer-content w-4/5 max-w-sm bg-white h-full max-h-[100dvh] overflow-y-auto overscroll-contain flex flex-col justify-start gap-8 transform translate-x-full transition-transform duration-300 shadow-2xl"
       >
         <div>
           <div
@@ -1314,48 +1561,44 @@
           >
             <span class="font-extrabold text-lg tracking-tight">DIV•</span>
             <button
-              onclick="toggleMobileMenu()"
+              onclick="closeMobileMenu()"
               aria-label="Close navigation menu"
-              class="w-11 h-11 shrink-0 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black"
+              class="icon-button"
             >
               ✕
             </button>
           </div>
           <nav
+            aria-label="Mobile navigation"
             class="flex flex-col gap-2 mt-8 text-base font-bold tracking-wider"
           >
             <a
-              onclick="toggleMobileMenu()"
               href="#home"
+              aria-current="location"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >HOME</a
             >
             <a
-              onclick="toggleMobileMenu()"
               href="#about"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >ABOUT ME</a
             >
             <a
-              onclick="toggleMobileMenu()"
               href="#skills"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >SKILLS</a
             >
             <a
-              onclick="toggleMobileMenu()"
               href="#experience"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >EXPERIENCE</a
             >
             <a
-              onclick="toggleMobileMenu()"
               href="#projects"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >PROJECTS</a
             >
             <a
-              onclick="toggleMobileMenu()"
               href="#contact"
               class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >CONTACT</a
@@ -1376,7 +1619,7 @@
 
     <!-- BEGIN: Hero Section -->
     <main
-      class="relative max-w-[1400px] mx-auto px-6 md:px-14 pt-6 md:pt-12 pb-20 overflow-hidden"
+      class="page-container relative pt-6 md:pt-12 pb-20 overflow-hidden"
       data-purpose="hero-section"
       id="home"
     >
@@ -1785,7 +2028,7 @@
                       <a
                         href="javascript:void(0)"
                         onclick="openContactModal()"
-                        class="pointer-events-auto px-5 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition-all duration-200 inline-flex items-center gap-2"
+                        class="button button-on-dark button-pill pointer-events-auto"
                       >
                         <span>GET IN TOUCH</span>
                         <svg
@@ -1804,7 +2047,7 @@
                       </a>
                       <a
                         href="#skills"
-                        class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200"
+                        class="button button-outline-on-dark button-pill pointer-events-auto"
                       >
                         SKILLS
                       </a>
@@ -1861,9 +2104,9 @@
     <!-- ==================== SKILLS SECTION ==================== -->
 <section
   id="skills"
-  class="skills-section relative w-full bg-[#FAFAFA] text-[#0D0D0D] px-6 md:px-12 lg:px-20 py-28 md:py-36 overflow-hidden"
+  class="skills-section relative w-full bg-[#FAFAFA] text-[#0D0D0D] py-28 md:py-36 overflow-hidden"
 >
-  <div class="max-w-[1600px] mx-auto relative z-10">
+  <div class="page-container relative z-10">
 
     <!-- SECTION HEADER -->
     <div class="skills-header flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
@@ -2314,7 +2557,7 @@
 
         <!-- Top Minimalist Editorial HUD Bar -->
         <header
-          class="relative z-30 w-full px-6 md:px-14 pt-6 pb-4 flex items-center justify-between border-b border-white/[0.08] backdrop-blur-md bg-[#070709]/80"
+          class="experience-hud relative z-30 w-full pt-6 pb-4 flex items-center justify-between border-b border-white/[0.08] backdrop-blur-md bg-[#070709]/80"
         >
           <div class="flex items-center gap-4">
             <span
@@ -2349,7 +2592,7 @@
           >
             <!-- ================= INTRO ENVIRONMENT (0vw - 90vw) ================= -->
             <div
-              class="exp-panel flex-shrink-0 w-[95vw] md:w-[85vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
+              class="exp-panel flex-shrink-0 w-[95vw] md:w-[85vw] flex flex-col justify-center"
             >
               <div class="max-w-3xl">
                 <div
@@ -2373,7 +2616,7 @@
 
             <!-- ================= CHAPTER 01: LEARNING (90vw - 190vw) ================= -->
             <div
-              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
+              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] flex flex-col justify-center"
             >
               <!-- Background Parallax Date Typography -->
               <div
@@ -2469,7 +2712,7 @@
 
             <!-- ================= CHAPTER 02: FREELANCE (190vw - 290vw) ================= -->
             <div
-              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
+              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] flex flex-col justify-center"
             >
               <!-- Background Parallax Date Typography -->
               <div
@@ -2578,7 +2821,7 @@
 
             <!-- AI/ML Researcher -->
             <div
-              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
+              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] flex flex-col justify-center"
             >
               <!-- Background Parallax Date Typography -->
               <div
@@ -2803,7 +3046,7 @@
 
     <!-- BEGIN: Featured Project Section -->
     <section
-      class="max-w-[1400px] mx-auto px-6 md:px-14 py-16"
+      class="page-container py-16"
       data-purpose="featured-projects"
       id="projects"
     >
@@ -2836,7 +3079,7 @@
       id="contact"
     >
       <div
-        class="max-w-[1400px] mx-auto px-6 md:px-14 flex flex-col items-center"
+        class="page-container flex flex-col items-center"
       >
         <!-- Metallic Callout Headline -->
         <div class="w-full text-center py-6 md:py-10">
@@ -2853,32 +3096,32 @@
           class="flex flex-wrap items-center justify-center gap-3.5 mt-8 mb-20"
         >
           <a
-            class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
+            class="button button-quiet-on-dark button-pill"
             href="https://www.instagram.com/btwimdivyam/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             INSTAGRAM
           </a>
           <a
-            class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
-            href="https://www.linkedin.com/in/divyamsingh-duhoon/"
+            class="button button-quiet-on-dark button-pill"
+            href="https://www.linkedin.com/in/divyam-singh-duhoon/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             LINKEDIN
           </a>
           <a
-            class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
+            class="button button-quiet-on-dark button-pill"
             href="https://github.com/divyamsingh007"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             GITHUB
           </a>
           <button
             onclick="openContactModal()"
-            class="px-7 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition transform hover:scale-105"
+            class="button button-on-dark button-pill hover:scale-105"
           >
             CONTACT ME
           </button>
@@ -2896,7 +3139,7 @@
         id="back-to-top"
         aria-label="Back to top"
         title="Back to top"
-        class="fixed bottom-7 right-7 z-50 w-11 h-11 flex items-center justify-center rounded-full border border-neutral-700 bg-[#171717]/90 backdrop-blur-md text-neutral-300 opacity-0 invisible translate-y-3 hover:bg-white hover:text-black hover:border-white hover:-translate-y-1 transition-all duration-300 ease-out"
+        class="icon-button icon-button-on-dark fixed bottom-7 right-7 z-30 bg-[#171717]/90 backdrop-blur-md opacity-0 invisible translate-y-3 hover:-translate-y-1 transition-all duration-300 ease-out"
       >
         <svg
           class="w-4 h-4"
@@ -2925,7 +3168,7 @@
     >
       <div
         id="project-modal-card"
-        class="bg-white rounded-[32px] max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar p-6 sm:p-8 md:p-9 shadow-2xl border border-neutral-100 opacity-0 scale-[0.94] translate-y-4 relative"
+        class="modal-card bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar p-6 sm:p-8 md:p-9 shadow-2xl border border-neutral-100 opacity-0 scale-[0.94] translate-y-4 relative"
       >
         <div class="relative text-center pb-4 mb-5 border-b border-neutral-100">
           <span
@@ -2941,7 +3184,7 @@
           </h3>
           <button
             onclick="closeProjectModal()"
-            class="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-500 hover:border-black hover:text-black hover:bg-neutral-50 transition-colors"
+            class="icon-button absolute right-0 top-1/2 -translate-y-1/2"
             aria-label="Close modal"
           >
             ✕
@@ -2964,7 +3207,7 @@
     >
       <div
         id="contact-modal-card"
-        class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300"
+        class="modal-card bg-white max-w-lg w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300"
       >
         <div
           class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-6"
@@ -2981,7 +3224,7 @@
           <button
             onclick="closeContactModal()"
             aria-label="Close contact modal"
-            class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black"
+            class="icon-button"
           >
             ✕
           </button>
@@ -3003,7 +3246,7 @@
               id="contact-name"
               required
               placeholder="John Doe"
-              class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm"
+              class="form-control w-full px-4 py-2.5 focus:border-black text-sm"
             />
           </div>
           <div>
@@ -3017,7 +3260,7 @@
               id="contact-email"
               required
               placeholder="john@company.com"
-              class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm"
+              class="form-control w-full px-4 py-2.5 focus:border-black text-sm"
             />
           </div>
           <div>
@@ -3028,7 +3271,7 @@
             >
             <select
               id="contact-service"
-              class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm bg-white"
+              class="form-control w-full px-4 py-2.5 focus:border-black text-sm bg-white"
             >
               <option value="Landing Page Design">Landing Page Design</option>
               <option value="UI/UX Design">UI/UX Design</option>
@@ -3049,12 +3292,12 @@
               rows="3"
               required
               placeholder="Tell me about your project, goals, and timeline..."
-              class="w-full px-4 py-2 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm"
+              class="form-control w-full px-4 py-2 focus:border-black text-sm"
             ></textarea>
           </div>
           <button
             type="submit"
-            class="w-full py-3 bg-black text-white rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-neutral-800 transition"
+            class="button button-primary w-full tracking-widest"
           >
             SEND MESSAGE
           </button>
@@ -3073,7 +3316,7 @@
     >
       <div
         id="cart-modal-card"
-        class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300"
+        class="modal-card bg-white max-w-md w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300"
       >
         <div
           class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4"
@@ -3084,7 +3327,7 @@
           <button
             onclick="closeCartModal()"
             aria-label="Close cart"
-            class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black"
+            class="icon-button"
           >
             ✕
           </button>
@@ -3104,7 +3347,7 @@
           </div>
           <button
             onclick="checkoutCart()"
-            class="w-full py-3 bg-black text-white rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-neutral-800 transition"
+            class="button button-primary w-full tracking-widest"
           >
             PROCEED TO CHECKOUT
           </button>
@@ -3116,18 +3359,25 @@
     <script>
       const backToTop = document.getElementById("back-to-top");
 
-      window.addEventListener("scroll", () => {
+      function updateBackToTopVisibility() {
         if (window.scrollY > 400) {
           backToTop.classList.remove("opacity-0", "invisible", "translate-y-3");
         } else {
           backToTop.classList.add("opacity-0", "invisible", "translate-y-3");
         }
+      }
+
+      window.addEventListener("scroll", updateBackToTopVisibility, {
+        passive: true,
       });
+      updateBackToTopVisibility();
 
       backToTop.addEventListener("click", () => {
         window.scrollTo({
           top: 0,
-          behavior: "smooth",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
         });
       });
       // Cart state
@@ -3618,23 +3868,45 @@
         const isOpen = !drawer.classList.contains("pointer-events-none");
 
         if (isOpen) {
-          drawer.classList.add("opacity-0", "pointer-events-none");
-          content.classList.add("translate-x-full");
-          document.body.classList.remove("overflow-hidden");
-          drawer.setAttribute("aria-hidden", "true");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.setAttribute("aria-label", "Open navigation menu");
-          menuButton.focus();
+          closeMobileMenu();
         } else {
           drawer.classList.remove("opacity-0", "pointer-events-none");
           content.classList.remove("translate-x-full");
           document.body.classList.add("overflow-hidden");
           drawer.setAttribute("aria-hidden", "false");
+          drawer.inert = false;
           menuButton.setAttribute("aria-expanded", "true");
           menuButton.setAttribute("aria-label", "Close navigation menu");
-          drawer.querySelector("a")?.focus();
+          drawer.querySelector("a[href^='#']")?.focus();
         }
       }
+
+      function closeMobileMenu({ restoreFocus = true } = {}) {
+        const drawer = document.getElementById("mobile-drawer");
+        const content = document.getElementById("mobile-drawer-content");
+        const menuButton = document.getElementById("mobile-menu-btn");
+
+        if (drawer.classList.contains("pointer-events-none")) return;
+
+        drawer.classList.add("opacity-0", "pointer-events-none");
+        content.classList.add("translate-x-full");
+        document.body.classList.remove("overflow-hidden");
+        drawer.setAttribute("aria-hidden", "true");
+        drawer.inert = true;
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+
+        if (restoreFocus) menuButton.focus();
+      }
+
+      document
+        .getElementById("mobile-drawer")
+        .addEventListener("click", (event) => {
+          const link = event.target.closest("a[href^='#']");
+          if (link && document.getElementById(link.hash.slice(1))) {
+            closeMobileMenu({ restoreFocus: false });
+          }
+        });
 
       // Toast notification helper
       function showToast(message) {
@@ -3657,51 +3929,87 @@
 
       // Initialize application
       function initApp() {
-        const sections = document.querySelectorAll("section[id], main[id]");
-        const navLinks = {
-          home: document.getElementById("nav-home"),
-          about: document.getElementById("nav-about"),
-          skills: document.getElementById("nav-skills"),
-          experience: document.getElementById("nav-experience"),
-          projects: document.getElementById("nav-projects"),
-          contact: document.getElementById("nav-contact"),
+        const siteNavigation = document.querySelector(
+          '[data-purpose="site-navigation"]',
+        );
+        const updateNavigationHeight = () => {
+          document.documentElement.style.setProperty(
+            "--navigation-height",
+            `${siteNavigation.offsetHeight}px`,
+          );
         };
+        const navigationResizeObserver = new ResizeObserver(
+          updateNavigationHeight,
+        );
+        navigationResizeObserver.observe(siteNavigation);
+        updateNavigationHeight();
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const id = entry.target.getAttribute("id");
-                Object.keys(navLinks).forEach((k) => {
-                  if (navLinks[k]) {
-                    if (k === id) {
-                      navLinks[k].classList.add(
-                        "border-neutral-300",
-                        "text-black",
-                      );
-                      navLinks[k].classList.remove(
-                        "border-transparent",
-                        "text-neutral-600",
-                      );
-                    } else {
-                      navLinks[k].classList.remove(
-                        "border-neutral-300",
-                        "text-black",
-                      );
-                      navLinks[k].classList.add(
-                        "border-transparent",
-                        "text-neutral-600",
-                      );
-                    }
-                  }
-                });
-              }
-            });
-          },
-          { rootMargin: "-20% 0px -60% 0px" },
+        const navLinks = [
+          ...document.querySelectorAll(
+            "#desktop-navigation a[href^='#'], #mobile-drawer nav a[href^='#']",
+          ),
+        ];
+        const sections = [
+          ...document.querySelectorAll("main[id], section[id], footer[id]"),
+        ].filter((section) =>
+          navLinks.some(
+            (link) => link.getAttribute("href") === `#${section.id}`,
+          ),
         );
 
-        sections.forEach((s) => observer.observe(s));
+        function setActiveSection(id) {
+          navLinks.forEach((link) => {
+            if (link.hash === `#${id}`) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        }
+
+        function updateActiveSection() {
+          if (!sections.length) return;
+
+          const activationPoint = Math.min(window.innerHeight * 0.36, 280);
+          let activeSection = sections.find((section) => {
+            const rect = section.getBoundingClientRect();
+            return rect.top <= activationPoint && rect.bottom > activationPoint;
+          });
+
+          if (
+            window.scrollY + window.innerHeight >=
+            document.documentElement.scrollHeight - 2
+          ) {
+            activeSection = sections[sections.length - 1];
+          }
+
+          if (!activeSection) {
+            activeSection = sections.reduce((closest, section) => {
+              const distance = Math.abs(
+                section.getBoundingClientRect().top - activationPoint,
+              );
+              return distance < closest.distance
+                ? { section, distance }
+                : closest;
+            }, {
+              section: sections[0],
+              distance: Math.abs(
+                sections[0].getBoundingClientRect().top - activationPoint,
+              ),
+            }).section;
+          }
+
+          setActiveSection(activeSection.id);
+        }
+
+        const observer = new IntersectionObserver(updateActiveSection, {
+          rootMargin: "-20% 0px -60% 0px",
+        });
+
+        sections.forEach((section) => observer.observe(section));
+        updateActiveSection();
+        window.addEventListener("hashchange", updateActiveSection);
+        window.addEventListener("popstate", updateActiveSection);
       }
 
       if (document.readyState === "loading") {
