@@ -632,38 +632,33 @@
         }
 
         #about {
-          min-height: 0 !important;
-          padding: 3rem 1rem;
+          min-height: 200vh !important;
+          min-height: 200svh !important;
+          padding: 0;
         }
 
         #about > .sticky {
-          position: relative;
-          height: auto;
-          min-height: 0;
-          overflow: visible;
+          position: sticky;
+          height: 100vh;
+          height: 100svh;
+          min-height: 100svh;
+          overflow: hidden;
         }
 
         #about .container,
         #about .container > div {
-          height: auto;
+          height: 100%;
         }
 
         #sem-media-container {
-          position: relative;
-          top: auto;
-          left: auto;
-          width: 100% !important;
-          height: auto !important;
-          min-height: 85svh;
-          max-width: none !important;
-          max-height: none !important;
-          transform: none;
+          max-width: none;
+          max-height: none;
         }
 
         #sem-media-container > div:first-child {
           position: relative;
-          min-height: 85svh;
-          height: auto;
+          min-height: 0;
+          height: 100%;
         }
 
         #sem-media-container > div:first-child > img {
@@ -672,16 +667,33 @@
         }
 
         #sem-media-content {
-          position: relative;
-          inset: auto;
+          position: absolute;
+          inset: 0;
+          justify-content: flex-start;
+          gap: 1.5rem;
           width: 100%;
-          flex: none;
-          min-height: 85svh;
-          opacity: 1 !important;
-          pointer-events: auto !important;
-          transform: none !important;
-          padding: 1.25rem;
+          height: 100%;
+          min-height: 0;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          padding: max(1rem, env(safe-area-inset-top))
+            max(1rem, env(safe-area-inset-right))
+            max(1rem, env(safe-area-inset-bottom))
+            max(1rem, env(safe-area-inset-left));
           user-select: auto;
+        }
+
+        #sem-media-content > div:nth-child(2) {
+          flex: none;
+          min-height: 0;
+          align-items: stretch;
+          justify-content: flex-start;
+          padding: 0;
+        }
+
+        #sem-media-content > div:nth-child(2) > div {
+          height: auto;
+          justify-content: flex-start;
         }
 
         #sem-media-blur {
@@ -714,7 +726,7 @@
         }
 
         #sem-media-content .grid {
-          grid-template-columns: minmax(0, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         #sem-media-content .grid > div {
@@ -733,8 +745,7 @@
         #sem-title-rest,
         #sem-date,
         #sem-scroll-prompt {
-          opacity: 1 !important;
-          transform: none !important;
+          will-change: transform, opacity;
         }
 
         #sem-title-first,
@@ -935,61 +946,13 @@
         }
       }
 
+      @media (max-width: 639px) {
+        #sem-media-content .grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
       @media (max-width: 900px) and (max-height: 500px) {
-        #about {
-          min-height: 0 !important;
-        }
-
-        #about > .sticky {
-          position: relative;
-          height: auto;
-          overflow: visible;
-        }
-
-        #sem-media-container {
-          position: relative;
-          top: auto;
-          left: auto;
-          width: 100% !important;
-          height: auto !important;
-          min-height: 85svh;
-          transform: none;
-        }
-
-        #sem-media-content {
-          position: relative;
-          width: 100%;
-          align-self: stretch;
-          min-height: 85svh;
-          opacity: 1 !important;
-          pointer-events: auto !important;
-        }
-
-        #sem-media-blur {
-          display: none;
-        }
-
-        #sem-media-img {
-          filter: brightness(0.55) grayscale(0.75);
-        }
-
-        #sem-media-overlay {
-          background-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.76),
-            rgba(0, 0, 0, 0.52)
-          );
-          opacity: 1 !important;
-        }
-
-        #sem-title-first,
-        #sem-title-rest,
-        #sem-date,
-        #sem-scroll-prompt {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-
         #experience {
           height: auto !important;
         }
