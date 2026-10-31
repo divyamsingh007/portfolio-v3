@@ -19,7 +19,10 @@ export async function initExperienceSection() {
   const jumpButtons = document.querySelectorAll('.exp-jump-btn');
 
   // Check reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const compactLayout = window.matchMedia(
+    '(max-width: 767px), (max-width: 900px) and (max-height: 500px)'
+  );
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // Resolve StringTune runtime from ES module or global UMD fallback
   let StringTuneClass = null;
@@ -82,6 +85,10 @@ export async function initExperienceSection() {
 
   // Compute maximum horizontal travel based on canvas geometry
   function getDimensions() {
+    if (compactLayout.matches) {
+      return { totalDist: 0, maxTranslate: 0 };
+    }
+
     const totalDist = section.offsetHeight - window.innerHeight;
     const stageWidth = stage.scrollWidth;
     const maxTranslate = Math.max(0, stageWidth - window.innerWidth);
@@ -91,16 +98,17 @@ export async function initExperienceSection() {
   let { totalDist, maxTranslate } = getDimensions();
   window.addEventListener('resize', () => {
     ({ totalDist, maxTranslate } = getDimensions());
-    if (prefersReducedMotion) {
+    if (reducedMotionQuery.matches || compactLayout.matches) {
       stage.style.transform = 'none';
     }
+    onScroll();
   }, { passive: true });
 
   // Update loop for 60/120 FPS camera interpolation
   function renderFrame() {
     isTicking = false;
 
-    if (prefersReducedMotion) {
+    if (reducedMotionQuery.matches || compactLayout.matches) {
       return;
     }
 
@@ -166,6 +174,11 @@ export async function initExperienceSection() {
 
   // Scroll listener computing normalized progress (0.0 to 1.0)
   function onScroll() {
+    if (compactLayout.matches) {
+      stage.style.transform = 'none';
+      return;
+    }
+
     const rect = section.getBoundingClientRect();
     const scrolled = -rect.top;
 

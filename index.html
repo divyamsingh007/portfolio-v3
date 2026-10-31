@@ -2,12 +2,62 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Divyam Singh — Developer & Creator</title>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+    <title>Divyam Singh | Software Developer & AI/ML Researcher</title>
     <meta
       name="description"
-      content="Explore the portfolio of Divyam Singh, a software developer and AI/ML researcher at NIT Hamirpur, working across full-stack development, computer vision, and intelligent systems."
+      content="Divyam Singh is a software developer and AI/ML researcher at NIT Hamirpur, building full-stack systems and exploring AI, ML, and computer vision."
     />
+    <meta name="author" content="Divyam Singh" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Divyam Singh | Software Developer & AI/ML Researcher"
+    />
+    <meta
+      property="og:description"
+      content="Divyam Singh is a software developer and AI/ML researcher at NIT Hamirpur, building full-stack systems and exploring AI, ML, and computer vision."
+    />
+    <meta
+      property="og:image"
+      content="https://divyamsingh007.github.io/portfolio-v3/assets/hero_portrait.png"
+    />
+    <meta property="og:url" content="https://divyamsingh007.github.io/portfolio-v3/" />
+    <meta property="og:site_name" content="Divyam Singh" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Divyam Singh | Software Developer & AI/ML Researcher"
+    />
+    <meta
+      name="twitter:description"
+      content="Divyam Singh is a software developer and AI/ML researcher at NIT Hamirpur, building full-stack systems and exploring AI, ML, and computer vision."
+    />
+    <meta
+      name="twitter:image"
+      content="https://divyamsingh007.github.io/portfolio-v3/assets/hero_portrait.png"
+    />
+    <link rel="canonical" href="https://divyamsingh007.github.io/portfolio-v3/" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Divyam Singh",
+        "url": "https://divyamsingh007.github.io/portfolio-v3/",
+        "jobTitle": "Software Developer & AI/ML Researcher",
+        "description": "Divyam Singh is a software developer and AI/ML researcher at NIT Hamirpur, building full-stack systems and exploring AI, ML, and computer vision.",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "National Institute of Technology Hamirpur"
+        },
+        "sameAs": [
+          "https://github.com/divyamsingh007",
+          "https://www.linkedin.com/in/divyamsingh-duhoon/",
+          "https://www.instagram.com/btwimdivyam/"
+        ]
+      }
+    </script>
 
     <!-- Tailwind CSS v3 with Plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -500,6 +550,558 @@
         transform: translateY(0);
         opacity: 1;
       }
+
+      :focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 1023px) {
+        header[data-purpose="site-navigation"] nav {
+          display: none;
+        }
+
+        header[data-purpose="site-navigation"] .header-social-links {
+          display: none;
+        }
+
+        #mobile-menu-btn {
+          display: inline-flex;
+          width: 44px;
+          height: 44px;
+        }
+      }
+
+      @media (max-width: 1279px) {
+        header[data-purpose="site-navigation"] .header-social-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        #home {
+          padding-top: clamp(1.5rem, 4vw, 3rem);
+          padding-bottom: clamp(3rem, 8vw, 5rem);
+        }
+
+        #hero-title {
+          font-size: clamp(2.4rem, 9.5vw, 6rem);
+          line-height: 0.9;
+        }
+
+        #hero-content-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 1rem;
+          margin-top: 0;
+        }
+
+        #hero-content-grid > div {
+          grid-column: auto !important;
+          order: initial !important;
+        }
+
+        #hero-content-grid .hero-portrait-mask {
+          width: min(100%, 30rem);
+          height: auto;
+          aspect-ratio: 24 / 29;
+        }
+
+        #hero-content-grid .hero-portrait-mask img {
+          position: absolute;
+          inset: 0;
+        }
+
+        #hero-content-grid > div:first-child {
+          order: 2 !important;
+          padding: 0 0 0.5rem;
+        }
+
+        #hero-content-grid > div:nth-child(2) {
+          order: 1 !important;
+          margin-top: -1rem;
+        }
+
+        #hero-content-grid > div:last-child {
+          order: 3 !important;
+          padding: 0;
+          gap: 1.5rem;
+        }
+
+        #hero-content-grid > div:last-child > p {
+          max-width: 34rem;
+        }
+
+        #about {
+          min-height: 0 !important;
+          padding: 3rem 1rem;
+        }
+
+        #about > .sticky {
+          position: relative;
+          height: auto;
+          min-height: 0;
+          overflow: visible;
+        }
+
+        #about .container,
+        #about .container > div {
+          height: auto;
+        }
+
+        #sem-media-container {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100% !important;
+          height: auto !important;
+          min-height: 85svh;
+          max-width: none !important;
+          max-height: none !important;
+          transform: none;
+        }
+
+        #sem-media-container > div:first-child {
+          position: relative;
+          min-height: 85svh;
+          height: auto;
+        }
+
+        #sem-media-container > div:first-child > img {
+          position: absolute;
+          inset: 0;
+        }
+
+        #sem-media-content {
+          position: relative;
+          inset: auto;
+          width: 100%;
+          flex: none;
+          min-height: 85svh;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          transform: none !important;
+          padding: 1.25rem;
+          user-select: auto;
+        }
+
+        #sem-media-blur {
+          display: none;
+        }
+
+        #sem-media-img {
+          filter: brightness(0.55) grayscale(0.75);
+        }
+
+        #sem-media-overlay {
+          background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.76),
+            rgba(0, 0, 0, 0.52)
+          );
+          opacity: 1 !important;
+        }
+
+        #sem-media-content > div:nth-child(2) {
+          padding: 1.5rem 0;
+        }
+
+        #sem-media-content > div:nth-child(2) > div:first-child {
+          margin-bottom: 1rem;
+        }
+
+        #sem-media-content > div:nth-child(2) > div:first-child h3 {
+          font-size: clamp(1.25rem, 5vw, 1.875rem);
+        }
+
+        #sem-media-content .grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        #sem-media-content .grid > div {
+          padding: 1.25rem;
+        }
+
+        #sem-media-content .grid > div > div:first-child {
+          margin-bottom: 1rem;
+        }
+
+        #sem-media-content .grid > div p {
+          font-size: 0.875rem;
+        }
+
+        #sem-title-first,
+        #sem-title-rest,
+        #sem-date,
+        #sem-scroll-prompt {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        #sem-title-first,
+        #sem-title-rest {
+          font-size: clamp(2rem, 9vw, 4rem);
+        }
+
+        #sem-media-content > div:last-child {
+          align-items: flex-start;
+        }
+
+        #sem-media-content > div:last-child > div:first-child > div {
+          flex-wrap: wrap;
+        }
+
+        #sem-media-content > div:last-child > div:last-child {
+          flex-wrap: wrap;
+        }
+
+        #sem-media-content > div:last-child a {
+          min-height: 44px;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        #flex-carousel-container {
+          height: clamp(18rem, 58svh, 35rem) !important;
+        }
+
+        #project-modal,
+        #contact-modal,
+        #cart-modal {
+          align-items: flex-start;
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          padding-top: max(1rem, env(safe-area-inset-top));
+          padding-bottom: max(1rem, env(safe-area-inset-bottom));
+        }
+
+        #project-modal-card,
+        #contact-modal-card,
+        #cart-modal-card {
+          max-height: calc(100dvh - 2rem);
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          margin-block: auto;
+        }
+
+        #project-modal-card {
+          width: min(100%, 42rem);
+          border-radius: 1.5rem;
+          padding: 1.25rem;
+        }
+
+        #modal-project-title {
+          padding-inline: 2.5rem;
+          overflow-wrap: anywhere;
+        }
+
+        #project-modal-card button[aria-label="Close modal"],
+        #contact-modal-card button[aria-label="Close contact modal"],
+        #cart-modal-card button[aria-label="Close cart"] {
+          width: 44px;
+          height: 44px;
+        }
+
+        #contact-modal-card {
+          width: min(100%, 32rem);
+          padding: 1.25rem;
+        }
+
+        #contact-modal-card input,
+        #contact-modal-card select,
+        #contact-modal-card textarea {
+          font-size: 16px;
+        }
+
+        #back-to-top {
+          right: max(1rem, env(safe-area-inset-right));
+          bottom: max(1rem, env(safe-area-inset-bottom));
+          width: 44px;
+          height: 44px;
+        }
+
+        #toast-container {
+          right: max(1rem, env(safe-area-inset-right));
+          bottom: max(4.5rem, calc(env(safe-area-inset-bottom) + 4rem));
+          left: max(1rem, env(safe-area-inset-left));
+          align-items: flex-end;
+        }
+      }
+
+      @media (max-width: 767px) {
+        #skills {
+          padding-inline: clamp(1rem, 6vw, 1.5rem);
+          padding-block: clamp(4rem, 14vw, 6rem);
+        }
+
+        #skills .skills-header {
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        #skills .skills-heading {
+          font-size: clamp(3.25rem, 16vw, 5rem);
+        }
+
+        #skills .skill-card {
+          min-height: 0;
+          padding: 1.5rem 0 2rem;
+          border-right: 0;
+        }
+
+        #skills .skill-card-header {
+          margin-bottom: 2rem;
+        }
+
+        #skills .skill-category-title {
+          font-size: clamp(1.5rem, 7vw, 2rem);
+          line-height: 1.05;
+        }
+
+        #skills .skill-item {
+          max-width: 100%;
+          white-space: normal;
+          overflow-wrap: anywhere;
+          min-height: 44px;
+        }
+
+        #experience {
+          height: auto !important;
+        }
+
+        #exp-sticky-viewport {
+          position: relative !important;
+          height: auto;
+          min-height: 100svh;
+          overflow: hidden;
+        }
+
+        #exp-sticky-viewport > header {
+          padding: 1rem max(1rem, env(safe-area-inset-right)) 1rem
+            max(1rem, env(safe-area-inset-left));
+        }
+
+        #exp-horizontal-stage {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          width: 100% !important;
+          height: auto;
+          transform: none !important;
+        }
+
+        #exp-horizontal-stage .exp-panel {
+          width: 100% !important;
+          min-height: min(70svh, 42rem);
+          padding: 3rem max(1.25rem, env(safe-area-inset-left))
+            4rem max(1.25rem, env(safe-area-inset-right));
+        }
+
+        #exp-horizontal-stage .exp-panel > div:first-child {
+          right: 1rem;
+          top: 0;
+          font-size: clamp(3rem, 12vw, 6rem);
+        }
+
+        #exp-horizontal-stage .exp-panel h2,
+        #exp-horizontal-stage .exp-panel h3 {
+          font-size: clamp(2.25rem, 11vw, 4.5rem);
+          overflow-wrap: anywhere;
+        }
+
+        #exp-horizontal-stage .exp-panel > div > div:first-child {
+          flex-wrap: wrap;
+          row-gap: 0.5rem;
+        }
+
+        #exp-horizontal-stage .exp-panel > div > div.grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 1.25rem;
+        }
+
+        #experience .exp-jump-btn {
+          min-height: 44px;
+        }
+
+        #contact .footer-metallic-title {
+          font-size: clamp(2.75rem, 13vw, 5rem);
+        }
+
+        #contact > div {
+          padding-bottom: max(3rem, env(safe-area-inset-bottom));
+        }
+
+        #contact .fixed {
+          bottom: max(1rem, env(safe-area-inset-bottom));
+        }
+      }
+
+      @media (max-width: 900px) and (max-height: 500px) {
+        #about {
+          min-height: 0 !important;
+        }
+
+        #about > .sticky {
+          position: relative;
+          height: auto;
+          overflow: visible;
+        }
+
+        #sem-media-container {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100% !important;
+          height: auto !important;
+          min-height: 85svh;
+          transform: none;
+        }
+
+        #sem-media-content {
+          position: relative;
+          width: 100%;
+          align-self: stretch;
+          min-height: 85svh;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+        }
+
+        #sem-media-blur {
+          display: none;
+        }
+
+        #sem-media-img {
+          filter: brightness(0.55) grayscale(0.75);
+        }
+
+        #sem-media-overlay {
+          background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.76),
+            rgba(0, 0, 0, 0.52)
+          );
+          opacity: 1 !important;
+        }
+
+        #sem-title-first,
+        #sem-title-rest,
+        #sem-date,
+        #sem-scroll-prompt {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        #experience {
+          height: auto !important;
+        }
+
+        #exp-sticky-viewport {
+          position: relative !important;
+          height: auto;
+          min-height: 100svh;
+          overflow: hidden;
+        }
+
+        #exp-horizontal-stage {
+          display: flex;
+          flex-direction: column;
+          width: 100% !important;
+          height: auto;
+          transform: none !important;
+        }
+
+        #exp-horizontal-stage .exp-panel {
+          width: 100% !important;
+          min-height: 70svh;
+          padding: 2rem 1.5rem 3rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+        }
+
+        #about {
+          min-height: 0 !important;
+          padding: 3rem clamp(1rem, 4vw, 4rem);
+        }
+
+        #about > .sticky {
+          position: relative;
+          height: auto;
+          overflow: visible;
+        }
+
+        #about .container,
+        #about .container > div {
+          height: auto;
+        }
+
+        #sem-media-container {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: min(100%, 75rem) !important;
+          height: auto !important;
+          min-height: 70svh;
+          max-width: none !important;
+          max-height: none !important;
+          transform: none;
+        }
+
+        #sem-media-container > div:first-child {
+          position: relative;
+          min-height: 70svh;
+          height: auto;
+        }
+
+        #sem-media-container > div:first-child > img {
+          position: absolute;
+          inset: 0;
+        }
+
+        #sem-media-content {
+          position: relative;
+          inset: auto;
+          width: 100%;
+          flex: none;
+          min-height: 70svh;
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          transform: none !important;
+        }
+
+        #sem-media-blur {
+          display: none;
+        }
+
+        #sem-media-img {
+          filter: brightness(0.55) grayscale(0.75);
+        }
+
+        #sem-media-overlay {
+          background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.76),
+            rgba(0, 0, 0, 0.52)
+          );
+          opacity: 1 !important;
+        }
+
+        #sem-title-first,
+        #sem-title-rest,
+        #sem-date,
+        #sem-scroll-prompt {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
     </style>
   </head>
   <body class="antialiased text-[#111] bg-[#FAFAFA]">
@@ -527,7 +1129,7 @@
 
       <!-- Center Navigation -->
       <nav
-        class="hidden md:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
+        class="hidden lg:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
       >
         <a
           id="nav-home"
@@ -544,6 +1146,13 @@
         >
 
         <a
+          id="nav-skills"
+          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          href="#skills"
+          >SKILLS</a
+        >
+
+        <a
           id="nav-experience"
           class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
           href="#experience"
@@ -555,6 +1164,12 @@
           class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
           href="#projects"
           >PROJECTS</a
+        >
+        <a
+          id="nav-contact"
+          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
+          href="#contact"
+          >CONTACT</a
         >
       </nav>
 
@@ -590,7 +1205,7 @@
 
         <!-- Social Icons Container -->
         <div
-          class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
+          class="header-social-links flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
         >
           <!-- Instagram -->
           <a
@@ -697,26 +1312,28 @@
             </svg>
           </a>
 
-          <!-- Mobile Hamburger -->
-          <button
-            id="mobile-menu-btn"
-            onclick="toggleMobileMenu()"
-            aria-label="Open Menu"
-            class="md:hidden w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 ml-1"
-          >
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <line x1="4" x2="20" y1="7" y2="7"></line>
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="17" y2="17"></line>
-            </svg>
-          </button>
         </div>
+        <button
+          id="mobile-menu-btn"
+          onclick="toggleMobileMenu()"
+          aria-label="Open navigation menu"
+          aria-controls="mobile-drawer"
+          aria-expanded="false"
+          class="lg:hidden w-11 h-11 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <line x1="4" x2="20" y1="7" y2="7"></line>
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="17" y2="17"></line>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -724,69 +1341,66 @@
     <div
       id="mobile-drawer"
       class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site navigation"
+      aria-hidden="true"
+      onclick="if (event.target === this) toggleMobileMenu();"
     >
       <div
         id="mobile-drawer-content"
-        class="w-4/5 max-w-sm bg-white h-full p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl"
+        class="w-4/5 max-w-sm bg-white h-full max-h-[100dvh] overflow-y-auto overscroll-contain p-6 sm:p-8 flex flex-col justify-start gap-8 transform translate-x-full transition-transform duration-300 shadow-2xl"
       >
         <div>
           <div
             class="flex items-center justify-between pb-6 border-b border-neutral-200"
           >
-            <span class="font-extrabold text-lg tracking-tight">PORTF•</span>
+            <span class="font-extrabold text-lg tracking-tight">DIV•</span>
             <button
               onclick="toggleMobileMenu()"
-              class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black"
+              aria-label="Close navigation menu"
+              class="w-11 h-11 shrink-0 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black"
             >
               ✕
             </button>
           </div>
           <nav
-            class="flex flex-col gap-4 mt-8 text-base font-bold tracking-wider"
+            class="flex flex-col gap-2 mt-8 text-base font-bold tracking-wider"
           >
             <a
               onclick="toggleMobileMenu()"
               href="#home"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >HOME</a
             >
             <a
               onclick="toggleMobileMenu()"
               href="#about"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >ABOUT ME</a
             >
             <a
               onclick="toggleMobileMenu()"
+              href="#skills"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
+              >SKILLS</a
+            >
+            <a
+              onclick="toggleMobileMenu()"
               href="#experience"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >EXPERIENCE</a
             >
             <a
               onclick="toggleMobileMenu()"
               href="#projects"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >PROJECTS</a
             >
             <a
               onclick="toggleMobileMenu()"
-              href="#landing-pages"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
-              >LANDING PAGES</a
-            >
-            <a
-              onclick="toggleMobileMenu()"
-              href="#services"
-              class="py-2 border-b border-neutral-100 hover:text-neutral-500"
-              >SERVICES</a
-            >
-            <a
-              onclick="
-                toggleMobileMenu();
-                openContactModal();
-              "
-              href="javascript:void(0)"
-              class="py-2 text-black hover:underline"
+              href="#contact"
+              class="min-h-11 py-3 border-b border-neutral-100 hover:text-neutral-500"
               >CONTACT</a
             >
           </nav>
@@ -827,6 +1441,7 @@
       <!-- Center Headshot & Symmetrical Content Grid -->
       <div
         class="relative grid grid-cols-1 md:grid-cols-12 items-center mt-2 md:-mt-6"
+        id="hero-content-grid"
       >
         <!-- Left Column: Designer info & Arrow -->
         <div
@@ -896,22 +1511,19 @@
             class="flex flex-col space-y-3 text-[11px] md:text-xs font-semibold tracking-widest text-neutral-600 uppercase"
           >
             <a
-              href="#services"
-              onclick="selectService(0)"
+              href="#skills"
               class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5"
             >
               <span>FULL-STACK DEVELOPER</span>
             </a>
             <a
-              href="#services"
-              onclick="selectService(1)"
+              href="#skills"
               class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5"
             >
               <span>AI / ML RESEARCHER</span>
             </a>
             <a
-              href="#services"
-              onclick="selectService(2)"
+              href="#skills"
               class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5"
             >
               <span>TECHNOLOGY ENTHUSIAST</span>
@@ -1234,10 +1846,10 @@
                         </svg>
                       </a>
                       <a
-                        href="#services"
+                        href="#skills"
                         class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200"
                       >
-                        SERVICES
+                        SKILLS
                       </a>
                     </div>
                   </div>
@@ -2358,6 +2970,9 @@
     <div
       id="project-modal"
       onclick="if (event.target === this) closeProjectModal();"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-project-title"
       class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none flex items-center justify-center p-4"
     >
       <div
@@ -2393,6 +3008,10 @@
     <!-- MODAL: Contact Form Modal -->
     <div
       id="contact-modal"
+      onclick="if (event.target === this) closeContactModal();"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
       class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4"
     >
       <div
@@ -2407,12 +3026,13 @@
               class="text-[10px] font-bold tracking-widest uppercase text-neutral-400"
               >START A CONVERSATION</span
             >
-            <h3 class="text-xl font-black uppercase text-neutral-900">
+            <h3 id="contact-modal-title" class="text-xl font-black uppercase text-neutral-900">
               LET'S BUILD SOMETHING
             </h3>
           </div>
           <button
             onclick="closeContactModal()"
+            aria-label="Close contact modal"
             class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black"
           >
             ✕
@@ -2426,6 +3046,7 @@
         >
           <div>
             <label
+              for="contact-name"
               class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
               >Your Name</label
             >
@@ -2439,6 +3060,7 @@
           </div>
           <div>
             <label
+              for="contact-email"
               class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
               >Email Address</label
             >
@@ -2452,6 +3074,7 @@
           </div>
           <div>
             <label
+              for="contact-service"
               class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
               >Service Required</label
             >
@@ -2469,6 +3092,7 @@
           </div>
           <div>
             <label
+              for="contact-message"
               class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
               >Message</label
             >
@@ -2493,6 +3117,10 @@
     <!-- MODAL: Cart Drawer / Modal -->
     <div
       id="cart-modal"
+      onclick="if (event.target === this) closeCartModal();"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cart-modal-title"
       class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4"
     >
       <div
@@ -2502,11 +3130,12 @@
         <div
           class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4"
         >
-          <h3 class="text-lg font-black uppercase text-neutral-900">
+          <h3 id="cart-modal-title" class="text-lg font-black uppercase text-neutral-900">
             SHOPPING BAG
           </h3>
           <button
             onclick="closeCartModal()"
+            aria-label="Close cart"
             class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black"
           >
             ✕
@@ -2735,6 +3364,8 @@
       }
 
       // Modal Handlers
+      let activeModalTrigger = null;
+
       function openProjectModal(itemOrKey) {
         let data = null;
         if (typeof itemOrKey === "object" && itemOrKey !== null) {
@@ -2804,12 +3435,15 @@
         const card = document.getElementById("project-modal-card");
         if (!modal || !card) return;
 
+        activeModalTrigger = document.activeElement;
         modal.classList.remove("pointer-events-none");
+        document.body.classList.add("overflow-hidden");
         void modal.offsetWidth; // Force reflow so transition starts cleanly
         requestAnimationFrame(() => {
           modal.classList.remove("opacity-0");
           card.classList.remove("opacity-0", "scale-[0.94]", "translate-y-4");
           card.classList.add("opacity-100", "scale-100", "translate-y-0");
+          card.querySelector("button")?.focus();
         });
       }
       window.openProjectModal = openProjectModal;
@@ -2825,6 +3459,8 @@
         setTimeout(() => {
           if (modal.classList.contains("opacity-0")) {
             modal.classList.add("pointer-events-none");
+            document.body.classList.remove("overflow-hidden");
+            activeModalTrigger?.focus();
           }
         }, 400);
       }
@@ -2832,9 +3468,12 @@
       function openContactModal() {
         const modal = document.getElementById("contact-modal");
         const card = document.getElementById("contact-modal-card");
+        activeModalTrigger = document.activeElement;
         modal.classList.remove("opacity-0", "pointer-events-none");
         card.classList.remove("scale-95");
         card.classList.add("scale-100");
+        document.body.classList.add("overflow-hidden");
+        card.querySelector("button")?.focus();
       }
 
       function closeContactModal() {
@@ -2843,13 +3482,58 @@
         modal.classList.add("opacity-0", "pointer-events-none");
         card.classList.remove("scale-100");
         card.classList.add("scale-95");
+        document.body.classList.remove("overflow-hidden");
+        activeModalTrigger?.focus();
       }
 
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
-          const modal = document.getElementById("project-modal");
-          if (modal && !modal.classList.contains("pointer-events-none")) {
+          const projectModal = document.getElementById("project-modal");
+          const contactModal = document.getElementById("contact-modal");
+          const drawer = document.getElementById("mobile-drawer");
+          if (projectModal && !projectModal.classList.contains("pointer-events-none")) {
             closeProjectModal();
+          } else if (contactModal && !contactModal.classList.contains("pointer-events-none")) {
+            closeContactModal();
+          } else if (drawer && !drawer.classList.contains("pointer-events-none")) {
+            toggleMobileMenu();
+          } else if (document.getElementById("cart-modal") && !document.getElementById("cart-modal").classList.contains("pointer-events-none")) {
+            closeCartModal();
+          }
+        }
+
+        if (e.key === "Tab") {
+          const modal = [
+            "project-modal",
+            "contact-modal",
+            "cart-modal",
+          ]
+            .map((id) => document.getElementById(id))
+            .find((element) => element && !element.classList.contains("pointer-events-none"));
+          const drawer = document.getElementById("mobile-drawer");
+          const activeDrawer =
+            drawer && !drawer.classList.contains("pointer-events-none")
+              ? drawer
+              : null;
+          const focusScope = modal || activeDrawer;
+          if (!focusScope) return;
+
+          const focusable = [...focusScope.querySelectorAll(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+          )].filter((element) => element.getClientRects().length > 0);
+          if (!focusable.length) {
+            e.preventDefault();
+            return;
+          }
+
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
           }
         }
       });
@@ -2874,11 +3558,13 @@
 
       function updateCartUI() {
         const badge = document.getElementById("cart-badge");
-        if (cart.length > 0) {
-          badge.innerText = cart.length;
-          badge.classList.remove("hidden");
-        } else {
-          badge.classList.add("hidden");
+        if (badge) {
+          if (cart.length > 0) {
+            badge.innerText = cart.length;
+            badge.classList.remove("hidden");
+          } else {
+            badge.classList.add("hidden");
+          }
         }
 
         const list = document.getElementById("cart-items");
@@ -2915,9 +3601,12 @@
         updateCartUI();
         const modal = document.getElementById("cart-modal");
         const card = document.getElementById("cart-modal-card");
+        activeModalTrigger = document.activeElement;
         modal.classList.remove("opacity-0", "pointer-events-none");
         card.classList.remove("scale-95");
         card.classList.add("scale-100");
+        document.body.classList.add("overflow-hidden");
+        card.querySelector("button")?.focus();
       }
 
       function closeCartModal() {
@@ -2926,6 +3615,8 @@
         modal.classList.add("opacity-0", "pointer-events-none");
         card.classList.remove("scale-100");
         card.classList.add("scale-95");
+        document.body.classList.remove("overflow-hidden");
+        activeModalTrigger?.focus();
       }
 
       function checkoutCart() {
@@ -2975,14 +3666,25 @@
       function toggleMobileMenu() {
         const drawer = document.getElementById("mobile-drawer");
         const content = document.getElementById("mobile-drawer-content");
+        const menuButton = document.getElementById("mobile-menu-btn");
         const isOpen = !drawer.classList.contains("pointer-events-none");
 
         if (isOpen) {
           drawer.classList.add("opacity-0", "pointer-events-none");
           content.classList.add("translate-x-full");
+          document.body.classList.remove("overflow-hidden");
+          drawer.setAttribute("aria-hidden", "true");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open navigation menu");
+          menuButton.focus();
         } else {
           drawer.classList.remove("opacity-0", "pointer-events-none");
           content.classList.remove("translate-x-full");
+          document.body.classList.add("overflow-hidden");
+          drawer.setAttribute("aria-hidden", "false");
+          menuButton.setAttribute("aria-expanded", "true");
+          menuButton.setAttribute("aria-label", "Close navigation menu");
+          drawer.querySelector("a")?.focus();
         }
       }
 
@@ -3011,9 +3713,10 @@
         const navLinks = {
           home: document.getElementById("nav-home"),
           about: document.getElementById("nav-about"),
+          skills: document.getElementById("nav-skills"),
           experience: document.getElementById("nav-experience"),
           projects: document.getElementById("nav-projects"),
-          services: document.getElementById("nav-services"),
+          contact: document.getElementById("nav-contact"),
         };
 
         const observer = new IntersectionObserver(

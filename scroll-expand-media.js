@@ -15,6 +15,8 @@ export function initScrollExpandMedia() {
   const mediaContent = document.getElementById('sem-media-content');
 
   const ASPECT_RATIO = 1024 / 546; // ≈ 1.875457875
+  const compactLayout = window.matchMedia('(max-width: 1023px)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   let isMobile = window.innerWidth < 768;
   window.addEventListener('resize', () => {
@@ -107,6 +109,8 @@ export function initScrollExpandMedia() {
 
   function renderFrame() {
     rafScheduled = false;
+    if (compactLayout.matches || reducedMotion.matches) return;
+
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const totalDist = section.offsetHeight - windowHeight;
