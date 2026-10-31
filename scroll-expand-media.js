@@ -15,7 +15,6 @@ export function initScrollExpandMedia() {
   const mediaContent = document.getElementById('sem-media-content');
 
   const ASPECT_RATIO = 1024 / 546; // ≈ 1.875457875
-  const compactLayout = window.matchMedia('(max-width: 1023px)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   let isMobile = window.innerWidth < 768;
@@ -35,7 +34,10 @@ export function initScrollExpandMedia() {
     const maxWByViewport = window.innerWidth * 0.94;
     const maxWByHeight = (window.innerHeight * 0.86) * ASPECT_RATIO;
     const endW = Math.min(maxWByViewport, maxWByHeight);
-    const endH = endW / ASPECT_RATIO;
+    const isPortraitPhone = isMobile && window.innerHeight > window.innerWidth;
+    const endH = isPortraitPhone
+      ? window.innerHeight * 0.86
+      : endW / ASPECT_RATIO;
 
     const currentW = startW + progress * (endW - startW);
     const currentH = startH + progress * (endH - startH);
@@ -109,7 +111,7 @@ export function initScrollExpandMedia() {
 
   function renderFrame() {
     rafScheduled = false;
-    if (compactLayout.matches || reducedMotion.matches) return;
+    if (reducedMotion.matches) return;
 
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
