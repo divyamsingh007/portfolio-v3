@@ -51,6 +51,276 @@
         selection-color: #fff;
       }
 
+     /* =========================================================
+   SKILLS SECTION — EDITORIAL GRID
+========================================================= */
+
+.skills-section {
+  isolation: isolate;
+}
+
+/* Header */
+
+.skills-heading {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+/* Grid */
+
+.skills-grid {
+  border-color: #dedede;
+}
+
+/* Individual Cards */
+
+.skill-card {
+  position: relative;
+  min-height: 350px;
+  padding: 34px 32px 42px;
+  overflow: hidden;
+  background: transparent;
+  transition: background-color 0.4s ease;
+}
+
+.skill-card:hover {
+  background-color: #f3f3f3;
+}
+
+/* Card Header */
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.skill-number {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: #a3a3a3;
+}
+
+.skill-caption {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #a3a3a3;
+  text-align: right;
+}
+
+/* Category Title */
+
+.skill-category-title {
+  font-size: clamp(25px, 2.2vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  color: #0d0d0d;
+  margin-bottom: 13px;
+  transition: transform 0.4s ease;
+}
+
+.skill-card:hover .skill-category-title {
+  transform: translateX(4px);
+}
+
+/* Description */
+
+.skill-description {
+  max-width: 300px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #888888;
+  margin-bottom: 27px;
+}
+
+/* Skill Items Container */
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+/* Individual Skill Chips */
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 38px;
+  padding: 8px 12px;
+
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+
+  color: #525252;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+
+  white-space: nowrap;
+  cursor: default;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Technology Logos */
+
+.skill-item img {
+  display: block;
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Hover Interaction */
+
+.skill-item:hover {
+  background-color: #0d0d0d;
+  border-color: #0d0d0d;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+}
+
+.skill-item:hover img {
+  transform: scale(1.12);
+}
+
+/* Text-only Skills */
+
+.skill-item-text {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Animated Bottom Border */
+
+.skill-card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #0d0d0d;
+
+  transition:
+    width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-card:hover .skill-card-line {
+  width: 100%;
+}
+
+/* Footer */
+
+.skills-footer {
+  border-top: none;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1023px) {
+  .skill-card {
+    min-height: 330px;
+    padding: 30px 25px 38px;
+  }
+
+  .skill-card-header {
+    margin-bottom: 38px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .skills-header {
+    margin-bottom: 55px;
+  }
+
+  .skill-card {
+    min-height: auto;
+    padding: 30px 20px 38px;
+    border-right: none;
+  }
+
+  .skill-card-header {
+    margin-bottom: 32px;
+  }
+
+  .skill-category-title {
+    font-size: 29px;
+  }
+
+  .skill-description {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .skill-items {
+    gap: 8px;
+  }
+
+  .skill-item {
+    min-height: 36px;
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+
+  .skill-item img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .skills-footer {
+    padding-top: 24px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card,
+  .skill-category-title,
+  .skill-item,
+  .skill-item img,
+  .skill-card-line {
+    transition: none !important;
+  }
+
+  .skill-item:hover {
+    transform: none;
+  }
+}
+
       ::selection {
         background: #000;
         color: #fff;
@@ -241,12 +511,12 @@
 
     <!-- BEGIN: Navigation Header -->
     <header
-      class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-14 max-w-[1400px] mx-auto flex items-center justify-between"
+      class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-10 lg:px-16 max-w-[1600px] mx-auto grid grid-cols-[1fr_auto_1fr] items-center"
       data-purpose="site-navigation"
     >
       <!-- Brand Wordmark -->
       <a
-        class="group font-extrabold text-xl tracking-tight text-black flex items-center"
+        class="group font-extrabold text-xl tracking-tight text-black flex items-center justify-self-start"
         href="#home"
       >
         <span>DIV</span>
@@ -255,9 +525,9 @@
         ></span>
       </a>
 
-      <!-- Center Navigation Links (Pill with no unwanted wrapping) -->
+      <!-- Center Navigation -->
       <nav
-        class="hidden md:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600"
+        class="hidden md:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
       >
         <a
           id="nav-home"
@@ -265,169 +535,188 @@
           href="#home"
           >HOME</a
         >
+
         <a
           id="nav-about"
           class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
           href="#about"
           >ABOUT ME</a
         >
+
         <a
           id="nav-experience"
           class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
           href="#experience"
           >EXPERIENCE</a
         >
+
         <a
           id="nav-projects"
           class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
           href="#projects"
           >PROJECTS</a
         >
-        <a
-          id="nav-landing-pages"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
-          href="#landing-pages"
-          >LANDING PAGES</a
-        >
-        <a
-          id="nav-services"
-          class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap"
-          href="#services"
-          >SERVICES</a
-        >
       </nav>
 
-      <!-- Right Social & Menu Links -->
-      <div
-        class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
-      >
-        <!-- Instagram -->
+      <!-- Right Side: Resume + Social Icons -->
+      <div class="flex items-center gap-2 justify-self-end">
+        <!-- Resume Button -->
         <a
-          class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
-          href="https://www.instagram.com/btwimdivyam/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Instagram"
+          href="assets/Divyam_Singh_Resume.pdf"
+          download="Divyam_Singh_Resume.pdf"
+          class="group flex items-center gap-2 px-3.5 h-10 rounded-full bg-black text-white border border-black hover:bg-neutral-800 transition-all duration-300"
+          title="Download Resume"
         >
-          <svg
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="text-[10px] sm:text-xs font-bold tracking-widest uppercase whitespace-nowrap"
           >
-            <defs>
-              <radialGradient
-                id="instagram-gradient"
-                cx="30%"
-                cy="107%"
-                r="150%"
-              >
-                <stop offset="0%" stop-color="#fdf497" />
-                <stop offset="5%" stop-color="#fdf497" />
-                <stop offset="45%" stop-color="#fd5949" />
-                <stop offset="60%" stop-color="#d6249f" />
-                <stop offset="90%" stop-color="#285AEB" />
-              </radialGradient>
-            </defs>
+            Resume
+          </span>
 
-            <rect
-              x="2"
-              y="2"
-              width="20"
-              height="20"
-              rx="5"
-              stroke="url(#instagram-gradient)"
-              stroke-width="2"
-            />
-
-            <circle
-              cx="12"
-              cy="12"
-              r="4.5"
-              stroke="url(#instagram-gradient)"
-              stroke-width="2"
-            />
-
-            <circle cx="18" cy="6" r="1.2" fill="#d6249f" />
-          </svg>
-        </a>
-
-        <!-- Codolio -->
-        <a
-          class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black"
-          href="https://codolio.com/profile/divyamsingh007"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Codolio"
-        >
-          <img
-            src="https://codolio.com/codolio_assets/codolio.svg"
-            alt="Codolio"
-            class="w-4 h-4 object-contain"
-          />
-        </a>
-
-        <!-- LinkedIn -->
-        <a
-          class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
-          href="https://www.linkedin.com/in/divyam-singh-duhoon/"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn"
-        >
           <svg
-            class="w-4 h-4"
+            class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5"
             viewBox="0 0 24 24"
-            fill="#0A66C2"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"
-            />
-          </svg>
-        </a>
-
-        <!-- GitHub -->
-        <a
-          class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
-          href="https://github.com/divyamsingh007"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub"
-        >
-          <svg
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="#181717"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-            />
-          </svg>
-        </a>
-
-        <!-- Mobile Hamburger Button -->
-        <button
-          id="mobile-menu-btn"
-          onclick="toggleMobileMenu()"
-          aria-label="Open Menu"
-          class="md:hidden w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 ml-1"
-        >
-          <svg
-            class="w-4 h-4"
             fill="none"
             stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <line x1="4" x2="20" y1="7" y2="7"></line>
-            <line x1="4" x2="20" y1="12" y2="12"></line>
-            <line x1="4" x2="20" y1="17" y2="17"></line>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <path d="M7 10l5 5 5-5" />
+            <path d="M12 15V3" />
           </svg>
-        </button>
+        </a>
+
+        <!-- Social Icons Container -->
+        <div
+          class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
+        >
+          <!-- Instagram -->
+          <a
+            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            href="https://www.instagram.com/btwimdivyam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <radialGradient
+                  id="instagram-gradient"
+                  cx="30%"
+                  cy="107%"
+                  r="150%"
+                >
+                  <stop offset="0%" stop-color="#fdf497" />
+                  <stop offset="5%" stop-color="#fdf497" />
+                  <stop offset="45%" stop-color="#fd5949" />
+                  <stop offset="60%" stop-color="#d6249f" />
+                  <stop offset="90%" stop-color="#285AEB" />
+                </radialGradient>
+              </defs>
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+                stroke="url(#instagram-gradient)"
+                stroke-width="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4.5"
+                stroke="url(#instagram-gradient)"
+                stroke-width="2"
+              />
+              <circle cx="18" cy="6" r="1.2" fill="#d6249f" />
+            </svg>
+          </a>
+
+          <!-- Codolio -->
+          <a
+            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            href="https://codolio.com/profile/divyamsingh007"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Codolio"
+          >
+            <img
+              src="https://codolio.com/codolio_assets/codolio.svg"
+              alt="Codolio"
+              class="w-4 h-4 object-contain"
+            />
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            href="https://www.linkedin.com/in/divyam-singh-duhoon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="#0A66C2"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"
+              />
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition"
+            href="https://github.com/divyamsingh007"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="GitHub"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="#181717"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              />
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button
+            id="mobile-menu-btn"
+            onclick="toggleMobileMenu()"
+            aria-label="Open Menu"
+            class="md:hidden w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 ml-1"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <line x1="4" x2="20" y1="7" y2="7"></line>
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="17" y2="17"></line>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -992,6 +1281,395 @@
     </section>
     <!-- END: About Section (ScrollExpandMedia Component) -->
 
+    <!-- ==================== SKILLS SECTION ==================== -->
+<section
+  id="skills"
+  class="skills-section relative w-full bg-[#FAFAFA] text-[#0D0D0D] px-6 md:px-12 lg:px-20 py-28 md:py-36 overflow-hidden"
+>
+  <div class="max-w-[1600px] mx-auto relative z-10">
+
+    <!-- SECTION HEADER -->
+    <div class="skills-header flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
+
+      <div>
+        <div class="flex items-center gap-3 mb-7">
+          <span class="w-2 h-2 rounded-full bg-black"></span>
+          <span class="text-[10px] md:text-xs tracking-[0.25em] font-semibold uppercase text-neutral-500">
+            03 / Technical Arsenal
+          </span>
+        </div>
+
+        <h2 class="skills-heading text-[clamp(3.5rem,9vw,8rem)] leading-[0.85] tracking-[-0.075em] font-semibold uppercase">
+          THE
+          <span class="text-neutral-400">TOOLKIT.</span>
+        </h2>
+      </div>
+
+      <div class="max-w-sm md:pb-2">
+        <p class="text-sm md:text-base leading-relaxed text-neutral-500">
+          Technologies, tools, and disciplines that shape the way
+          I think, design, experiment, and build.
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- SKILLS GRID -->
+    <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-neutral-300">
+
+      <!-- 01 FRONTEND -->
+      <article class="skill-card lg:border-r border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">01 / 06</span>
+          <span class="skill-caption">INTERFACES & EXPERIENCES</span>
+        </div>
+
+        <h3 class="skill-category-title">Frontend</h3>
+
+        <p class="skill-description">
+          Crafting responsive interfaces and interactive digital experiences.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="" loading="lazy">
+            HTML5
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/css/663399" alt="" loading="lazy">
+            CSS3
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="lazy">
+            JavaScript
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy">
+            TypeScript
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" loading="lazy">
+            React
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/nextdotjs/000000" alt="" loading="lazy">
+            Next.js
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" loading="lazy">
+            Tailwind CSS
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/bootstrap/7952B3" alt="" loading="lazy">
+            Bootstrap
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+
+      <!-- 02 BACKEND -->
+      <article class="skill-card lg:border-r border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">02 / 06</span>
+          <span class="skill-caption">SERVER & ARCHITECTURE</span>
+        </div>
+
+        <h3 class="skill-category-title">Backend</h3>
+
+        <p class="skill-description">
+          Building application logic, APIs, and scalable server-side systems.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="" loading="lazy">
+            Node.js
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/express/000000" alt="" loading="lazy">
+            Express.js
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy">
+            Python
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/jsonwebtokens/000000" alt="" loading="lazy">
+            JWT
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="" loading="lazy">
+            REST APIs
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/nodemon/76D04B" alt="" loading="lazy">
+            Nodemailer
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+
+      <!-- 03 DATABASE -->
+      <article class="skill-card border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">03 / 06</span>
+          <span class="skill-caption">DATA & STORAGE</span>
+        </div>
+
+        <h3 class="skill-category-title">Database</h3>
+
+        <p class="skill-description">
+          Structuring, managing, and working with application data.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/mongodb/47A248" alt="" loading="lazy">
+            MongoDB
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/mongoose/880000" alt="" loading="lazy">
+            Mongoose
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/mysql/4479A1" alt="" loading="lazy">
+            MySQL
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/sqlite/003B57" alt="" loading="lazy">
+            SQLite
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+
+      <!-- 04 AI / ML -->
+      <article class="skill-card lg:border-r border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">04 / 06</span>
+          <span class="skill-caption">INTELLIGENCE & RESEARCH</span>
+        </div>
+
+        <h3 class="skill-category-title">AI / ML</h3>
+
+        <p class="skill-description">
+          Exploring intelligent systems, computer vision, and multimodal AI.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="" loading="lazy">
+            PyTorch
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="" loading="lazy">
+            TensorFlow
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/opencv/5C3EE8" alt="" loading="lazy">
+            OpenCV
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="" loading="lazy">
+            Hugging Face
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/numpy/013243" alt="" loading="lazy">
+            NumPy
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="" loading="lazy">
+            Scikit-learn
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/mediapipe/0097A7" alt="" loading="lazy">
+            MediaPipe
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+
+      <!-- 05 TOOLS -->
+      <article class="skill-card lg:border-r border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">05 / 06</span>
+          <span class="skill-caption">TOOLS & ENVIRONMENTS</span>
+        </div>
+
+        <h3 class="skill-category-title">Tools & Platforms</h3>
+
+        <p class="skill-description">
+          The ecosystem behind my development and creative workflow.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/git/F05032" alt="" loading="lazy">
+            Git
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/github/181717" alt="" loading="lazy">
+            GitHub
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="" loading="lazy">
+            Figma
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/linux/FCC624" alt="" loading="lazy">
+            Linux
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="" loading="lazy">
+            Ubuntu
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="" loading="lazy">
+            VS Code
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/vercel/000000" alt="" loading="lazy">
+            Vercel
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" loading="lazy">
+            Jupyter
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+
+      <!-- 06 LANGUAGES & FOUNDATIONS -->
+      <article class="skill-card border-b border-neutral-300">
+
+        <div class="skill-card-header">
+          <span class="skill-number">06 / 06</span>
+          <span class="skill-caption">CORE FOUNDATIONS</span>
+        </div>
+
+        <h3 class="skill-category-title">Languages & More</h3>
+
+        <p class="skill-description">
+          The fundamentals and disciplines that shape my engineering approach.
+        </p>
+
+        <div class="skill-items">
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy">
+            Python
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="lazy">
+            JavaScript
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy">
+            TypeScript
+          </span>
+
+          <span class="skill-item">
+            <img src="https://cdn.simpleicons.org/rust/000000" alt="" loading="lazy">
+            Rust
+          </span>
+
+          <span class="skill-item skill-item-text">
+            DSA
+          </span>
+
+          <span class="skill-item skill-item-text">
+            OOP
+          </span>
+
+          <span class="skill-item skill-item-text">
+            UI / UX
+          </span>
+
+          <span class="skill-item skill-item-text">
+            System Design
+          </span>
+
+        </div>
+
+        <div class="skill-card-line"></div>
+      </article>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="skills-footer flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8">
+
+      <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400">
+        Constantly Learning · Always Building
+      </p>
+
+      <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400">
+        Knowledge is a work in progress <span class="text-black">↗</span>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+<!-- ==================== END SKILLS SECTION ==================== -->
+
     <!-- BEGIN: Experience Section ("Where I've Been" — Horizontal Cinematic Installation) -->
     <section
       class="relative w-full bg-[#070709] text-white overflow-visible"
@@ -1310,6 +1988,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- AI/ML Researcher -->
             <div
               class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
             >
@@ -1419,30 +2099,119 @@
                 </div>
               </div>
             </div>
+
+            <!-- Leadership & Positions of Responsibility -->
+            <div
+              class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center"
+            >
+              <!-- Background Parallax Date Typography -->
+              <div
+                class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
+                data-parallax-factor="0.15"
+              >
+                2024 — PRESENT
+              </div>
+
+              <div class="relative z-10 max-w-4xl">
+                <!-- Eyebrow & Date -->
+                <div class="flex items-center gap-4 mb-4">
+                  <span
+                    class="text-xs font-semibold tracking-widest uppercase text-neutral-400"
+                  >
+                    2024— PRESENT
+                  </span>
+
+                  <span class="h-[1px] w-12 bg-white/20"></span>
+
+                  <span
+                    class="text-xs font-bold tracking-widest uppercase text-white"
+                  >
+                    LEADERSHIP & INITIATIVE
+                  </span>
+
+                  <span
+                    class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300"
+                  >
+                    CAMPUS ENGAGEMENT
+                  </span>
+                </div>
+
+                <!-- Role Title -->
+                <h3
+                  class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6"
+                >
+                  LEADERSHIP<br />& INITIATIVE
+                </h3>
+
+                <!-- Narrative Summary -->
+                <p
+                  class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8"
+                >
+                  Beyond building things individually, I've always valued the
+                  opportunity to bring people together, take initiative, and
+                  contribute to something larger. Through student communities,
+                  collaborative projects, and institutional activities, I've
+                  learned to take ownership, work with diverse perspectives, and
+                  turn collective ideas into action.
+                </p>
+
+                <!-- Leadership Milestones -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8"
+                >
+                  <!-- Milestone 01 -->
+                  <div>
+                    <div
+                      class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5"
+                    >
+                      TEAM LEADERSHIP
+                    </div>
+
+                    <div
+                      class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug"
+                    >
+                      Led a four-member team for BridgeTheGap, coordinating
+                      development of an AI-powered Indian Sign Language
+                      solution.
+                    </div>
+                  </div>
+
+                  <!-- Milestone 02 -->
+                  <div>
+                    <div
+                      class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5"
+                    >
+                      INSTITUTIONAL REPRESENTATION
+                    </div>
+
+                    <div
+                      class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug"
+                    >
+                      Represented NIT Hamirpur at Smart India Hackathon 2025 as
+                      part of an interdisciplinary problem-solving team.
+                    </div>
+                  </div>
+
+                  <!-- Milestone 03 -->
+                  <div>
+                    <div
+                      class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5"
+                    >
+                      CAMPUS INVOLVEMENT
+                    </div>
+
+                    <div
+                      class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug"
+                    >
+                      Contributing to institute-level development initiatives
+                      and participating in E-Cell and CSEC activities.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <!-- Bottom Minimalist Editorial Navigation & Spatial Status Bar -->
-        <!-- <footer
-          class="relative z-30 w-full px-6 md:px-14 py-4 flex items-center justify-between border-t border-white/[0.08] backdrop-blur-md bg-[#070709]/80"
-        >
-          <div class="flex items-center gap-2 sm:gap-4">
-            <button
-              type="button"
-              class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/20 text-white bg-white/10 transition-all hover:bg-white/20"
-              data-target-progress="0.30"
-            >
-              LEARNING
-            </button>
-            <button
-              type="button"
-              class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20"
-              data-target-progress="0.75"
-            >
-              FREELANCE
-            </button>
-          </div>
-        </footer> -->
       </div>
     </section>
     <!-- END: Experience Section -->
@@ -1475,239 +2244,6 @@
     </section>
     <!-- END: Featured Project Section -->
 
-    <!-- BEGIN: Landing Pages Featured Projects (WorksWheel) Section -->
-    <section
-      class="max-w-[1400px] mx-auto px-6 md:px-14 py-16"
-      data-purpose="landing-pages-featured-projects"
-      id="landing-pages"
-    >
-      <!-- Header with Title -->
-      <div
-        class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
-      >
-        <div>
-          <h2
-            class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900"
-          >
-            LANDING PAGES
-          </h2>
-        </div>
-      </div>
-
-      <!-- WorksWheel 3D Container -->
-      <div
-        class="w-full relative overflow-hidden"
-        style="height: 640px; min-height: 520px"
-      >
-        <div id="works-wheel-container" class="w-full h-full relative">
-          <!-- WorksWheel mounts here -->
-        </div>
-      </div>
-    </section>
-    <!-- END: Landing Pages Featured Projects Section -->
-
-    <!-- BEGIN: Services Section -->
-    <section
-      class="max-w-[1400px] mx-auto px-6 md:px-14 py-20"
-      data-purpose="services-section"
-      id="services"
-    >
-      <!-- Centered Header -->
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2
-          class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 mb-4"
-        >
-          THE SERVICES WE PROVIDE
-        </h2>
-        <p
-          class="text-xs md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-500"
-        >
-          CREATING VISUALLY APPEALING AND FUNCTIONAL WEBSITES TAILORED TO THE
-          CLIENT'S NEEDS AND GOALS. PROVIDING A CONSISTENT USER EXPERIENCE
-          ACROSS PLATFORMS.
-        </p>
-      </div>
-
-      <!-- Service Pill Rows Accordion -->
-      <div class="max-w-4xl mx-auto flex flex-col space-y-3.5">
-        <!-- Item 1: UI/UX -->
-        <div
-          id="service-0"
-          onclick="toggleService(0)"
-          class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer"
-        >
-          <div class="flex items-center justify-between">
-            <span
-              class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700"
-              >1</span
-            >
-            <span
-              class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800"
-              >UI/UX</span
-            >
-            <div
-              class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform"
-            >
-              <svg
-                class="w-3.5 h-3.5 text-neutral-700"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 9l-7 7-7-7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="accordion-content">
-            <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
-              User research, wireframing, interactive prototyping, and usability
-              validation. Transforming complex workflows into effortless,
-              delightful digital experiences.
-            </p>
-            <div
-              class="flex items-center justify-between border-t border-neutral-200 pt-3"
-            >
-              <span class="text-[11px] font-mono text-neutral-400"
-                >DELIVERABLES: USER FLOWS, WIREFRAMES, DESIGN TOKENS</span
-              >
-              <button
-                onclick="
-                  event.stopPropagation();
-                  bookSpecificService('UI/UX Design');
-                "
-                class="text-xs font-bold underline hover:text-neutral-600"
-              >
-                INQUIRE ↗
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 2: WEB DESIGN -->
-        <div
-          id="service-1"
-          onclick="toggleService(1)"
-          class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer"
-        >
-          <div class="flex items-center justify-between">
-            <span
-              class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700"
-              >2</span
-            >
-            <span
-              class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800"
-              >WEB DESIGN</span
-            >
-            <div
-              class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform"
-            >
-              <svg
-                class="w-3.5 h-3.5 text-neutral-700"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 9l-7 7-7-7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="accordion-content">
-            <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
-              Bespoke web aesthetics with flawless responsive layouts,
-              typography hierarchy, high-contrast dark modes, and crisp
-              interactive animations.
-            </p>
-            <div
-              class="flex items-center justify-between border-t border-neutral-200 pt-3"
-            >
-              <span class="text-[11px] font-mono text-neutral-400"
-                >DELIVERABLES: FULL RESPONSIVE WEB DESIGNS, FIGMA SYSTEM</span
-              >
-              <button
-                onclick="
-                  event.stopPropagation();
-                  bookSpecificService('Web Design');
-                "
-                class="text-xs font-bold underline hover:text-neutral-600"
-              >
-                INQUIRE ↗
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 3: LANDING PAGE DESIGN (Active by default) -->
-        <div
-          id="service-2"
-          onclick="toggleService(2)"
-          class="accordion-item active w-full flex flex-col px-6 py-4 rounded-3xl bg-black text-white shadow-xl cursor-pointer transition-all transform scale-[1.01]"
-        >
-          <div class="flex items-center justify-between">
-            <span
-              class="item-badge w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-medium text-neutral-300"
-              >3</span
-            >
-            <span
-              class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-white"
-              >LANDING PAGE DESIGN</span
-            >
-            <div
-              class="item-icon w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center transition-transform rotate-90"
-            >
-              <svg
-                class="w-3.5 h-3.5 text-white"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 5l7 7-7 7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </div>
-          </div>
-          <div class="accordion-content">
-            <p class="text-xs text-neutral-300 leading-relaxed max-w-2xl mb-4">
-              High-converting editorial landing pages tailored for startups,
-              product launches, and personal brands. Engineered to capture
-              attention and boost conversions.
-            </p>
-            <div
-              class="flex items-center justify-between border-t border-neutral-800 pt-3"
-            >
-              <span class="text-[11px] font-mono text-neutral-400"
-                >DELIVERABLES: COPYWRITING STRUCTURE, CUSTOM 3D/GRAPHICS,
-                WEBFLOW CODE</span
-              >
-              <button
-                onclick="
-                  event.stopPropagation();
-                  bookSpecificService('Landing Page Design');
-                "
-                class="text-xs font-bold underline text-white hover:text-neutral-300"
-              >
-                INQUIRE ↗
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END: Services Section -->
-
     <!-- BEGIN: Contact / Let's Talk Footer -->
     <footer
       class="w-full bg-[#0D0D0D] text-white pt-20 pb-12 mt-12"
@@ -1733,7 +2269,7 @@
         >
           <a
             class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
-            href="https://www.instagram.com/echo__builds/"
+            href="https://www.instagram.com/btwimdivyam/"
             target="_blank"
             rel="noopener"
           >
@@ -1741,15 +2277,7 @@
           </a>
           <a
             class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
-            href="https://x.com/Jishn8m"
-            target="_blank"
-            rel="noopener"
-          >
-            TWITTER
-          </a>
-          <a
-            class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
-            href="https://www.linkedin.com/in/jishnu-mondal/"
+            href="https://www.linkedin.com/in/divyam-singh-duhoon/"
             target="_blank"
             rel="noopener"
           >
@@ -1757,7 +2285,7 @@
           </a>
           <a
             class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white"
-            href="https://github.com/Jishnu09-siuu"
+            href="https://github.com/divyamsingh007"
             target="_blank"
             rel="noopener"
           >
@@ -1776,9 +2304,28 @@
           class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-600 font-semibold gap-4"
         >
           <div>PORTFOLIO. ALL RIGHTS RESERVED</div>
-          <div>DESIGN BY JISHNU MONDAL</div>
         </div>
       </div>
+      <!-- Back to Top -->
+      <button
+        id="back-to-top"
+        aria-label="Back to top"
+        title="Back to top"
+        class="fixed bottom-7 right-7 z-50 w-11 h-11 flex items-center justify-center rounded-full border border-neutral-700 bg-[#171717]/90 backdrop-blur-md text-neutral-300 opacity-0 invisible translate-y-3 hover:bg-white hover:text-black hover:border-white hover:-translate-y-1 transition-all duration-300 ease-out"
+      >
+        <svg
+          class="w-4 h-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5" />
+          <path d="M5 12l7-7 7 7" />
+        </svg>
+      </button>
     </footer>
     <!-- END: Contact / Let's Talk Footer -->
 
@@ -1965,6 +2512,22 @@
 
     <!-- JAVASCRIPT: Comprehensive Interactivity -->
     <script>
+      const backToTop = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.remove("opacity-0", "invisible", "translate-y-3");
+        } else {
+          backToTop.classList.add("opacity-0", "invisible", "translate-y-3");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
       // Cart state
       let cart = [];
 

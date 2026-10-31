@@ -4,53 +4,37 @@ export const photo = (id) => `https://images.unsplash.com/${id}?w=1200&q=80&auto
 
 export const DEFAULT_ITEMS = [
   {
-    src: 'Project Images/Cafe Website.png',
-    alt: 'Cafe Website',
-    title: 'Cafe Website',
-    subtitle: 'Editorial Coffee House Experience',
-    description: 'A full-stack cafe management system with an admin portal for orders, menu, and reservations',
-    link: 'https://mochaandmiso.web.app/'
-  },
-  {
-    src: 'Project Images/Design Studio.png',
-    alt: 'Design Studio',
-    title: 'Design Studio',
-    subtitle: 'Creative Agency & Brand Identity',
-    description: 'A bold design studio website built to showcase creative services, brand identity, and digital experiences',
-    link: 'https://echo-design-studio-ex.vercel.app/'
-  },
-  {
-    src: 'Project Images/Photographer Portfolio.png',
-    alt: 'Photographer Portfolio',
-    title: 'Photographer Portfolio',
-    subtitle: 'Editorial & Analog Photography',
-    description: 'An analog & editorial photography portfolio showcasing timeless visual stories',
-    link: 'https://julianvance.vercel.app/'
-  },
-  {
-    src: 'Project Images/Portfolio Design.png',
-    alt: 'Portfolio Design',
-    title: 'Portfolio Design',
-    subtitle: 'Minimalist Creative Developer Portfolio',
-    description: 'A sleek, high-performance portfolio crafted with modern typography, fluid interactions, and curated creative work.',
-    link: 'https://echooo.web.app/'
-  },
-  {
-    src: 'Project Images/Portfolio Website.png',
-    alt: 'Portfolio Website',
-    title: 'Portfolio Website',
-    subtitle: 'Personal Developer & Designer Portfolio',
-    description: 'A personal portfolio highlighting full-stack engineering, interactive UI components, and modern web craft.',
-    link: 'https://jishnumondal.vercel.app/'
-  },
-  {
-    src: 'Project Images/Sen Cruzo-Client Portfolio.png',
-    alt: 'Sen Cruzo',
-    title: 'Sen Cruzo',
-    subtitle: 'Luxury Architectural & Client Portfolio',
-    description: 'A bespoke editorial portfolio designed for high-profile client presentation, featuring immersive layouts and architectural visual storytelling.',
-    link: 'https://sencruzo.web.app/'
-  }
+  src: 'Project Images/BridgeTheGap.png',
+  alt: 'BridgeTheGap',
+  title: 'BridgeTheGap',
+  subtitle: 'AI-Powered Indian Sign Language Translation',
+  description: 'An AI-driven system that translates Indian Sign Language into audible speech using computer vision, MediaPipe, and deep learning. Led a four-member team to develop the core recognition pipeline.',
+  link: '#'
+},
+{
+  src: 'Project Images/HBH Platform.jpeg',
+  alt: 'HBH All-in-One Platform',
+  title: 'HBH Platform',
+  subtitle: 'Hostel Management & Campus Ecosystem',
+  description: 'A full-stack platform built for Himadri Boys Hostel at NIT Hamirpur, featuring authentication, complaint management, mess menus, notices, profile management, and administrative analytics.',
+  link: '#'
+},
+{
+  src: 'Project Images/SamvaadAI.png',
+  alt: 'SamvaadAI',
+  title: 'SamvaadAI',
+  subtitle: 'AI-Powered Voice Interview Agent',
+  description: 'An intelligent mock interview platform that generates role-specific questions from resumes, captures spoken responses, transcribes answers, and evaluates performance through semantic analysis.',
+  link: '#'
+},
+{
+  src: 'Project Images/Uni-Sign.png',
+  alt: 'Uni-Sign Reproduction',
+  title: 'Uni-Sign',
+  subtitle: 'Sign Language Understanding Research',
+  description: 'Reproducing the Uni-Sign research framework using PyTorch and Transformers, exploring pose-based representations, multimodal learning, and sign language translation.',
+  link: '#'
+}
 ];
 
 export const BEND_PRESETS = {
