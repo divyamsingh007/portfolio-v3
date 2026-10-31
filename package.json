@@ -5,10 +5,14 @@
   "description": "Monochrome Editorial Developer & Designer Portfolio",
   "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 8080",
-    "start": "python3 -m http.server 8080"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@fiddle-digital/string-tune": "^1.2.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5"
   }
 }
