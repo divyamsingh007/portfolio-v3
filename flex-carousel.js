@@ -9,15 +9,15 @@ export const DEFAULT_ITEMS = [
   title: 'BridgeTheGap',
   subtitle: 'AI-Powered Indian Sign Language Translation',
   description: 'An AI-driven system that translates Indian Sign Language into audible speech using computer vision, MediaPipe, and deep learning. Led a four-member team to develop the core recognition pipeline.',
-  link: '#'
+  link: 'https://github.com/divyamsingh007/BridgeTheGap'
 },
 {
-  src: 'Project Images/HBH Platform.jpeg',
+  src: 'Project Images/HBH Platform.png',
   alt: 'HBH All-in-One Platform',
   title: 'HBH Platform',
   subtitle: 'Hostel Management & Campus Ecosystem',
   description: 'A full-stack platform built for Himadri Boys Hostel at NIT Hamirpur, featuring authentication, complaint management, mess menus, notices, profile management, and administrative analytics.',
-  link: '#'
+  link: 'https://himadri.nith.org.in/'
 },
 {
   src: 'Project Images/SamvaadAI.png',
@@ -25,16 +25,16 @@ export const DEFAULT_ITEMS = [
   title: 'SamvaadAI',
   subtitle: 'AI-Powered Voice Interview Agent',
   description: 'An intelligent mock interview platform that generates role-specific questions from resumes, captures spoken responses, transcribes answers, and evaluates performance through semantic analysis.',
-  link: '#'
+  link: 'https://samvaadai-nmnh.onrender.com/'
 },
-{
-  src: 'Project Images/Uni-Sign.png',
-  alt: 'Uni-Sign Reproduction',
-  title: 'Uni-Sign',
-  subtitle: 'Sign Language Understanding Research',
-  description: 'Reproducing the Uni-Sign research framework using PyTorch and Transformers, exploring pose-based representations, multimodal learning, and sign language translation.',
-  link: '#'
-}
+// {
+//   src: 'Project Images/Uni-Sign.png',
+//   alt: 'Uni-Sign Reproduction',
+//   title: 'Uni-Sign',
+//   subtitle: 'Sign Language Understanding Research',
+//   description: 'Reproducing the Uni-Sign research framework using PyTorch and Transformers, exploring pose-based representations, multimodal learning, and sign language translation.',
+//   link: '#'
+// }
 ];
 
 export const BEND_PRESETS = {
