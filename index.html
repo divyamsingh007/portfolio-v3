@@ -310,11 +310,6 @@
         border-color: var(--color-ink);
       }
 
-      #contact-form .form-control[type="text"],
-      #contact-form .form-control[type="email"] {
-        border-radius: var(--radius-control);
-      }
-
       .modal-card {
         border-radius: var(--radius-card);
       }
@@ -1165,7 +1160,6 @@
         }
 
         #project-modal,
-        #contact-modal,
         #cart-modal {
           align-items: flex-start;
           overflow-y: auto;
@@ -1175,7 +1169,6 @@
         }
 
         #project-modal-card,
-        #contact-modal-card,
         #cart-modal-card {
           max-height: calc(100dvh - 2rem);
           overflow-y: auto;
@@ -1195,21 +1188,9 @@
         }
 
         #project-modal-card button[aria-label="Close modal"],
-        #contact-modal-card button[aria-label="Close contact modal"],
         #cart-modal-card button[aria-label="Close cart"] {
           width: 44px;
           height: 44px;
-        }
-
-        #contact-modal-card {
-          width: min(100%, 32rem);
-          padding: 1.25rem;
-        }
-
-        #contact-modal-card input,
-        #contact-modal-card select,
-        #contact-modal-card textarea {
-          font-size: 16px;
         }
 
         #back-to-top {
@@ -1224,6 +1205,61 @@
           bottom: max(4.5rem, calc(env(safe-area-inset-bottom) + 4rem));
           left: max(1rem, env(safe-area-inset-left));
           align-items: flex-end;
+        }
+      }
+
+      #experience .exp-details-link {
+        display: flex;
+        width: clamp(17rem, 24vw, 21rem);
+        flex: 0 0 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        border-top: 1px solid rgb(255 255 255 / 20%);
+        padding-top: 1.5rem;
+        color: #fff;
+        text-decoration: none;
+        transition: opacity var(--transition-normal) ease;
+      }
+
+      #experience .exp-details-link:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 4px;
+      }
+
+      #experience .exp-details-label {
+        color: #a3a3a3;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      #experience .exp-details-title {
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        font-weight: 800;
+        letter-spacing: -0.07em;
+        line-height: 1.05;
+      }
+
+      #experience .exp-details-copy {
+        color: #bdbdbd;
+        font-size: 0.875rem;
+        line-height: 1.65;
+      }
+
+      #experience .exp-details-link:hover {
+        opacity: 0.82;
+      }
+
+      @media (max-width: 1023px) {
+        #experience .exp-leadership-layout {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        #experience .exp-details-link {
+          width: 100%;
         }
       }
 
@@ -1363,6 +1399,7 @@
           min-height: 70svh;
           padding: 2rem 1.5rem 3rem;
         }
+
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -2175,8 +2212,7 @@
                     <!-- Monochrome Action Buttons -->
                     <div class="flex items-center gap-3 shrink-0 pt-1 md:pt-0">
                       <a
-                        href="javascript:void(0)"
-                        onclick="openContactModal()"
+                        href="./contact.html"
                         class="button button-on-dark button-pill pointer-events-auto"
                       >
                         <span>GET IN TOUCH</span>
@@ -3300,7 +3336,10 @@
                 2024 — PRESENT
               </div>
 
-              <div class="relative z-10 max-w-4xl">
+              <div
+                class="exp-leadership-layout relative z-10 flex w-full max-w-[78rem] items-center gap-8 xl:gap-12"
+              >
+                <div class="min-w-0 max-w-4xl flex-1">
                 <!-- Eyebrow & Date -->
                 <div class="flex items-center gap-4 mb-4">
                   <span
@@ -3395,6 +3434,40 @@
                     </div>
                   </div>
                 </div>
+
+                </div>
+
+                <a
+                  href="./experiences.html"
+                  class="exp-details-link group"
+                >
+                  <span class="exp-details-label">BEYOND THE HIGHLIGHTS</span>
+                  <span class="exp-details-title">
+                    Explore every experience
+                  </span>
+                  <span class="exp-details-copy">
+                    Education, internships, AI research, and leadership — in
+                    more detail.
+                  </span>
+                  <span
+                    class="button button-outline-on-dark button-pill group inline-flex items-center gap-2"
+                  >
+                    <span>VIEW ALL EXPERIENCES</span>
+                    <svg
+                      class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m13 6 6 6-6 6" />
+                    </svg>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -3428,6 +3501,41 @@
           <!-- FlexCarousel mounts here -->
         </div>
       </div>
+
+      <div
+        class="mt-10 flex flex-col gap-6 border-t border-neutral-200 pt-8 md:flex-row md:items-center md:justify-between md:gap-10"
+      >
+        <div class="max-w-2xl">
+          <h3
+            class="mb-2 text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl"
+          >
+            Want to explore more of my work?
+          </h3>
+          <p class="text-sm leading-relaxed text-neutral-500">
+            See all three projects with their visuals, full descriptions, and
+            links to explore each one.
+          </p>
+        </div>
+        <a
+          href="./projects.html"
+          class="button button-primary button-pill group inline-flex min-h-14 shrink-0 items-center gap-3 self-start px-6 md:self-auto"
+        >
+          <span>EXPLORE ALL PROJECTS &amp; DETAILS</span>
+          <svg
+            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14" />
+            <path d="m13 6 6 6-6 6" />
+          </svg>
+        </a>
+      </div>
     </section>
     <!-- END: Featured Project Section -->
 
@@ -3442,9 +3550,8 @@
         <div class="w-full text-center py-6 md:py-10">
           <h2
             class="text-[12vw] md:text-[8rem] lg:text-[10rem] font-black uppercase leading-none tracking-tight footer-metallic-title select-none cursor-pointer"
-            onclick="openContactModal()"
           >
-            LET'S TALK
+            <a href="./contact.html">LET'S TALK</a>
           </h2>
         </div>
 
@@ -3476,12 +3583,20 @@
           >
             GITHUB
           </a>
-          <button
-            onclick="openContactModal()"
+          <a
+            class="button button-quiet-on-dark button-pill"
+            href="https://codolio.com/profile/divyamsingh007"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CODOLIO
+          </a>
+          <a
+            href="./contact.html"
             class="button button-on-dark button-pill hover:scale-105"
           >
             CONTACT ME
-          </button>
+          </a>
         </div>
 
         <!-- Bottom Credits Bar -->
@@ -3550,118 +3665,6 @@
         <div id="modal-project-body" class="space-y-5 text-sm text-neutral-700">
           <!-- Injected dynamically -->
         </div>
-      </div>
-    </div>
-
-    <!-- MODAL: Contact Form Modal -->
-    <div
-      id="contact-modal"
-      onclick="if (event.target === this) closeContactModal();"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="contact-modal-title"
-      class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4"
-    >
-      <div
-        id="contact-modal-card"
-        class="modal-card bg-white max-w-lg w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300"
-      >
-        <div
-          class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-6"
-        >
-          <div>
-            <span
-              class="text-[10px] font-bold tracking-widest uppercase text-neutral-400"
-              >START A CONVERSATION</span
-            >
-            <h3
-              id="contact-modal-title"
-              class="text-xl font-black uppercase text-neutral-900"
-            >
-              LET'S BUILD SOMETHING
-            </h3>
-          </div>
-          <button
-            onclick="closeContactModal()"
-            aria-label="Close contact modal"
-            class="icon-button"
-          >
-            ✕
-          </button>
-        </div>
-
-        <form
-          id="contact-form"
-          onsubmit="submitContactForm(event)"
-          class="space-y-4"
-        >
-          <div>
-            <label
-              for="contact-name"
-              class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
-              >Your Name</label
-            >
-            <input
-              type="text"
-              id="contact-name"
-              required
-              placeholder="John Doe"
-              class="form-control w-full px-4 py-2.5 focus:border-black text-sm"
-            />
-          </div>
-          <div>
-            <label
-              for="contact-email"
-              class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
-              >Email Address</label
-            >
-            <input
-              type="email"
-              id="contact-email"
-              required
-              placeholder="john@company.com"
-              class="form-control w-full px-4 py-2.5 focus:border-black text-sm"
-            />
-          </div>
-          <div>
-            <label
-              for="contact-service"
-              class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
-              >Service Required</label
-            >
-            <select
-              id="contact-service"
-              class="form-control w-full px-4 py-2.5 focus:border-black text-sm bg-white"
-            >
-              <option value="Landing Page Design">Landing Page Design</option>
-              <option value="UI/UX Design">UI/UX Design</option>
-              <option value="Web Design">Web Design</option>
-              <option value="Mobile App Design">Mobile App Design</option>
-              <option value="UI Design Figma">UI Design Figma</option>
-              <option value="Other">Other / Full Project</option>
-            </select>
-          </div>
-          <div>
-            <label
-              for="contact-message"
-              class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1"
-              >Message</label
-            >
-            <textarea
-              id="contact-message"
-              rows="3"
-              required
-              placeholder="Tell me about your project, goals, and timeline..."
-              class="form-control w-full px-4 py-2 focus:border-black text-sm"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="button button-primary w-full tracking-widest"
-          >
-            SEND MESSAGE
-          </button>
-        </form>
       </div>
     </div>
 
@@ -3909,22 +3912,6 @@
         }
       }
 
-      function bookSpecificService(serviceName) {
-        openContactModal();
-        const select = document.getElementById("contact-service");
-        if (select) {
-          for (let i = 0; i < select.options.length; i++) {
-            if (
-              select.options[i].text.includes(serviceName) ||
-              select.options[i].value.includes(serviceName)
-            ) {
-              select.selectedIndex = i;
-              break;
-            }
-          }
-        }
-      }
-
       // Modal Handlers
       let activeModalTrigger = null;
 
@@ -4027,42 +4014,15 @@
         }, 400);
       }
 
-      function openContactModal() {
-        const modal = document.getElementById("contact-modal");
-        const card = document.getElementById("contact-modal-card");
-        activeModalTrigger = document.activeElement;
-        modal.classList.remove("opacity-0", "pointer-events-none");
-        card.classList.remove("scale-95");
-        card.classList.add("scale-100");
-        document.body.classList.add("overflow-hidden");
-        card.querySelector("button")?.focus();
-      }
-
-      function closeContactModal() {
-        const modal = document.getElementById("contact-modal");
-        const card = document.getElementById("contact-modal-card");
-        modal.classList.add("opacity-0", "pointer-events-none");
-        card.classList.remove("scale-100");
-        card.classList.add("scale-95");
-        document.body.classList.remove("overflow-hidden");
-        activeModalTrigger?.focus();
-      }
-
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           const projectModal = document.getElementById("project-modal");
-          const contactModal = document.getElementById("contact-modal");
           const drawer = document.getElementById("mobile-drawer");
           if (
             projectModal &&
             !projectModal.classList.contains("pointer-events-none")
           ) {
             closeProjectModal();
-          } else if (
-            contactModal &&
-            !contactModal.classList.contains("pointer-events-none")
-          ) {
-            closeContactModal();
           } else if (
             drawer &&
             !drawer.classList.contains("pointer-events-none")
@@ -4079,7 +4039,7 @@
         }
 
         if (e.key === "Tab") {
-          const modal = ["project-modal", "contact-modal", "cart-modal"]
+          const modal = ["project-modal", "cart-modal"]
             .map((id) => document.getElementById(id))
             .find(
               (element) =>
@@ -4114,17 +4074,6 @@
           }
         }
       });
-
-      function submitContactForm(e) {
-        e.preventDefault();
-        const name = document.getElementById("contact-name").value;
-        const service = document.getElementById("contact-service").value;
-        closeContactModal();
-        showToast(
-          `Thank you, ${name}! Your inquiry for "${service}" has been received.`,
-        );
-        document.getElementById("contact-form").reset();
-      }
 
       // Cart Handlers
       function addToCart(title, price) {
@@ -4232,12 +4181,6 @@
           kwh.innerText = (parseFloat(kwh.innerText) + 0.8).toFixed(1) + " kWh";
         }
         showToast("Live solar telemetry synchronized (+0.8 kWh).");
-      }
-
-      function copyContactEmail() {
-        const email = "hello@example.com";
-        navigator.clipboard?.writeText(email);
-        showToast("Copied email: hello@example.com");
       }
 
       function toggleMobileMenu() {
