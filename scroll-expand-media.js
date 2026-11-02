@@ -96,6 +96,13 @@ export function initScrollExpandMedia() {
 
     // Content reveals smoothly as media finishes expanding
     if (mediaContent) {
+      if (progress >= 0.85 && !mediaContent.classList.contains('has-revealed')) {
+        mediaContent.classList.add('has-revealed');
+        mediaContent.querySelectorAll('.about-reveal').forEach((element) => {
+          element.classList.add('is-revealed');
+        });
+      }
+
       if (progress >= 0.85) {
         const contentFade = Math.min(1, (progress - 0.85) / 0.15);
         mediaContent.style.opacity = contentFade.toFixed(3);
