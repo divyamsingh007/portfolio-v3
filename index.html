@@ -754,17 +754,16 @@
         }
       }
 
-      [data-purpose="site-navigation"] .intro-enter,
-      [data-purpose="hero-section"] .intro-enter {
-        animation: hero-arrive 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      .reveal-motion.is-revealed {
+        animation: hero-arrive 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
       }
 
       [data-purpose="site-navigation"] .intro-enter-nav {
-        animation-delay: 120ms;
+        animation-delay: 100ms;
       }
 
       [data-purpose="site-navigation"] .intro-enter-resume {
-        animation-delay: 220ms;
+        animation-delay: 200ms;
       }
 
       [data-purpose="site-navigation"] .intro-enter-social {
@@ -772,19 +771,19 @@
       }
 
       [data-purpose="site-navigation"] .intro-enter-mobile {
-        animation-delay: 220ms;
+        animation-delay: 200ms;
       }
 
       [data-purpose="hero-section"] .intro-enter-portrait {
-        animation-delay: 560ms;
+        animation-delay: 500ms;
       }
 
       [data-purpose="hero-section"] .intro-enter-left {
-        animation-delay: 640ms;
+        animation-delay: 600ms;
       }
 
       [data-purpose="hero-section"] .intro-enter-right {
-        animation-delay: 720ms;
+        animation-delay: 700ms;
       }
 
       [data-purpose="site-navigation"] .intro-enter-brand {
@@ -792,12 +791,59 @@
       }
 
       [data-purpose="hero-section"] .intro-enter-title {
+        animation-delay: 400ms;
+      }
+
+      #sem-media-content .about-reveal-story {
+        animation-delay: 100ms;
+      }
+
+      #sem-media-content .about-reveal-grid > .about-reveal-card:nth-child(1) {
+        animation-delay: 180ms;
+      }
+
+      #sem-media-content .about-reveal-grid > .about-reveal-card:nth-child(2) {
+        animation-delay: 260ms;
+      }
+
+      #sem-media-content .about-reveal-grid > .about-reveal-card:nth-child(3) {
+        animation-delay: 340ms;
+      }
+
+      #sem-media-content .about-reveal-grid > .about-reveal-card:nth-child(4) {
         animation-delay: 420ms;
       }
 
+      #sem-media-content .about-reveal-footer {
+        animation-delay: 500ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(1) {
+        animation-delay: 100ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(2) {
+        animation-delay: 200ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(3) {
+        animation-delay: 300ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(4) {
+        animation-delay: 400ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(5) {
+        animation-delay: 500ms;
+      }
+
+      #skills .skills-grid > .skill-card:nth-child(6) {
+        animation-delay: 600ms;
+      }
+
       @media (prefers-reduced-motion: reduce) {
-        [data-purpose="site-navigation"] .intro-enter,
-        [data-purpose="hero-section"] .intro-enter {
+        .reveal-motion.is-revealed {
           animation: none;
         }
       }
@@ -1421,7 +1467,7 @@
     >
       <!-- Brand Wordmark -->
       <a
-        class="intro-enter intro-enter-brand group font-extrabold text-xl tracking-tight text-black flex items-center justify-self-start"
+        class="reveal-motion intro-enter intro-enter-brand group font-extrabold text-xl tracking-tight text-black flex items-center justify-self-start"
         href="#home"
         aria-label="Divyam Singh home"
       >
@@ -1435,7 +1481,7 @@
       <nav
         id="desktop-navigation"
         aria-label="Primary navigation"
-        class="intro-enter intro-enter-nav hidden lg:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
+        class="reveal-motion intro-enter intro-enter-nav hidden lg:flex items-center gap-1 p-1 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm text-xs font-semibold tracking-wider text-neutral-600 justify-self-center"
       >
         <a
           id="nav-home"
@@ -1486,7 +1532,7 @@
         <a
           href="assets/Divyam_Singh_Resume.pdf"
           download="Divyam_Singh_Resume.pdf"
-          class="intro-enter intro-enter-resume button button-primary button-pill group px-4"
+          class="reveal-motion intro-enter intro-enter-resume button button-primary button-pill group px-4"
           title="Download Resume"
         >
           <span
@@ -1512,7 +1558,7 @@
 
         <!-- Social Icons Container -->
         <div
-          class="intro-enter intro-enter-social header-social-links flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
+          class="reveal-motion intro-enter intro-enter-social header-social-links flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm"
         >
           <!-- Instagram -->
           <a
@@ -1629,7 +1675,7 @@
           aria-label="Open navigation menu"
           aria-controls="mobile-drawer"
           aria-expanded="false"
-          class="intro-enter intro-enter-mobile lg:hidden w-11 h-11 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700"
+          class="reveal-motion intro-enter intro-enter-mobile lg:hidden w-11 h-11 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700"
         >
           <svg
             class="w-4 h-4"
@@ -1732,7 +1778,7 @@
     >
       <!-- Big Title Header -->
       <div
-        class="intro-enter intro-enter-title text-center w-full mb-6 md:mb-10 relative z-0 select-none"
+        class="reveal-motion intro-enter intro-enter-title text-center w-full mb-6 md:mb-10 relative z-0 select-none"
       >
         <h1
           id="hero-title"
@@ -1754,7 +1800,7 @@
       >
         <!-- Left Column: Designer info & Arrow -->
         <div
-          class="intro-enter intro-enter-left md:col-span-3 flex flex-col items-start md:items-start pl-2 md:pl-6 order-2 md:order-1 pt-6 md:pt-0"
+          class="reveal-motion intro-enter intro-enter-left md:col-span-3 flex flex-col items-start md:items-start pl-2 md:pl-6 order-2 md:order-1 pt-6 md:pt-0"
         >
           <span
             class="text-xs font-bold tracking-wider uppercase text-neutral-800 mb-6"
@@ -1785,7 +1831,7 @@
 
         <!-- Center Column: Stylized Black and White Headshot (in front of text) -->
         <div
-          class="intro-enter intro-enter-portrait md:col-span-6 flex justify-center order-1 md:order-2 relative z-10 -mt-16 md:-mt-36"
+          class="reveal-motion intro-enter intro-enter-portrait md:col-span-6 flex justify-center order-1 md:order-2 relative z-10 -mt-16 md:-mt-36"
         >
           <div
             class="relative w-[320px] h-[400px] md:w-[480px] md:h-[580px] flex items-end justify-center hero-portrait-mask"
@@ -1804,7 +1850,7 @@
 
         <!-- Right Column: Pitch and Disciplines -->
         <div
-          class="intro-enter intro-enter-right md:col-span-3 flex flex-col items-start md:items-end text-left order-3 pt-6 md:pt-0 pr-2 md:pr-6 space-y-10"
+          class="reveal-motion intro-enter intro-enter-right md:col-span-3 flex flex-col items-start md:items-end text-left order-3 pt-6 md:pt-0 pr-2 md:pr-6 space-y-10"
         >
           <!-- Pitch Quote -->
           <p
@@ -1936,7 +1982,7 @@
                 >
                   <!-- Top Perimeter: Refined Monochrome Headline -->
                   <div
-                    class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-3"
+                    class="reveal-motion about-reveal about-reveal-header flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-3"
                   >
                     <h3
                       class="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-tight text-white max-w-xl"
@@ -1959,7 +2005,7 @@
                     <div class="w-full h-full flex flex-col justify-center">
                       <!-- Section Heading -->
                       <div
-                        class="flex items-center justify-between mb-6 md:mb-8"
+                        class="reveal-motion about-reveal about-reveal-story flex items-center justify-between mb-6 md:mb-8"
                       >
                         <div>
                           <p
@@ -1978,11 +2024,11 @@
 
                       <!-- 2x2 Journey Grid -->
                       <div
-                        class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4"
+                        class="about-reveal-grid grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4"
                       >
                         <!-- 01: Beginning -->
                         <div
-                          class="group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2010,7 +2056,7 @@
 
                         <!-- 02: Engineering -->
                         <div
-                          class="group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2039,7 +2085,7 @@
 
                         <!-- 03: Exploration -->
                         <div
-                          class="group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2068,7 +2114,7 @@
 
                         <!-- 04: Vision -->
                         <div
-                          class="group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2100,7 +2146,7 @@
 
                   <!-- Bottom Perimeter: Disciplines, About Summary & Monochrome CTAs -->
                   <div
-                    class="pt-3 border-t border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4"
+                    class="reveal-motion about-reveal about-reveal-footer pt-3 border-t border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4"
                   >
                     <!-- About Me Summary & Disciplines -->
                     <div class="max-w-xl space-y-2">
@@ -2212,7 +2258,7 @@
       <div class="page-container relative z-10">
         <!-- SECTION HEADER -->
         <div
-          class="skills-header flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20"
+          class="reveal-motion skills-reveal skills-header flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20"
         >
           <div>
             <div class="flex items-center gap-3 mb-7">
@@ -2245,7 +2291,7 @@
           class="skills-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-neutral-300"
         >
           <!-- 01 FRONTEND -->
-          <article class="skill-card lg:border-r border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card lg:border-r border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">01 / 06</span>
               <span class="skill-caption">INTERFACES & EXPERIENCES</span>
@@ -2359,7 +2405,7 @@
           </article>
 
           <!-- 02 BACKEND -->
-          <article class="skill-card lg:border-r border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card lg:border-r border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">02 / 06</span>
               <span class="skill-caption">SERVER & ARCHITECTURE</span>
@@ -2434,7 +2480,7 @@
           </article>
 
           <!-- 03 DATABASE -->
-          <article class="skill-card border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">03 / 06</span>
               <span class="skill-caption">DATA & STORAGE</span>
@@ -2477,7 +2523,7 @@
           </article>
 
           <!-- 04 AI / ML -->
-          <article class="skill-card lg:border-r border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card lg:border-r border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">04 / 06</span>
               <span class="skill-caption">INTELLIGENCE & RESEARCH</span>
@@ -2600,7 +2646,7 @@
           </article>
 
           <!-- 05 TOOLS -->
-          <article class="skill-card lg:border-r border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card lg:border-r border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">05 / 06</span>
               <span class="skill-caption">TOOLS & ENVIRONMENTS</span>
@@ -2716,7 +2762,7 @@
           </article>
 
           <!-- 06 LANGUAGES & FOUNDATIONS -->
-          <article class="skill-card border-b border-neutral-300">
+          <article class="reveal-motion skills-reveal skill-card border-b border-neutral-300">
             <div class="skill-card-header">
               <span class="skill-number">06 / 06</span>
               <span class="skill-caption">CORE FOUNDATIONS</span>
@@ -2799,7 +2845,7 @@
 
         <!-- FOOTER -->
         <div
-          class="skills-footer flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8"
+          class="reveal-motion skills-reveal skills-footer flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8"
         >
           <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-400">
             Constantly Learning · Always Building
@@ -4265,6 +4311,27 @@
         const siteNavigation = document.querySelector(
           '[data-purpose="site-navigation"]',
         );
+        const revealTargets = document.querySelectorAll(
+          '[data-purpose="site-navigation"] .intro-enter, [data-purpose="hero-section"] .intro-enter, #skills .skills-reveal',
+        );
+        if (
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          "IntersectionObserver" in window
+        ) {
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-revealed");
+                revealObserver.unobserve(entry.target);
+              });
+            },
+            { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+          );
+          revealTargets.forEach((target) => revealObserver.observe(target));
+        }
+
         const updateNavigationHeight = () => {
           document.documentElement.style.setProperty(
             "--navigation-height",
