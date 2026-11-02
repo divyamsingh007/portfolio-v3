@@ -103,14 +103,73 @@
         id="project-list"
         aria-label="All projects"
       >
-        <article class="project-entry">
-          <a
-            class="project-image-link"
-            href="https://github.com/divyamsingh007/BridgeTheGap"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View BridgeTheGap on GitHub"
+        <nav class="project-filters" aria-label="Filter projects by technology">
+          <span class="filter-label">FILTER BY</span>
+          <div class="filter-options">
+            <button
+              class="project-filter is-active"
+              type="button"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              ALL PROJECTS <span>03</span>
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-filter="ai"
+              aria-pressed="false"
+            >
+              AI &amp; ML
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-filter="computer-vision"
+              aria-pressed="false"
+            >
+              COMPUTER VISION
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-filter="full-stack"
+              aria-pressed="false"
+            >
+              FULL STACK
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-filter="python"
+              aria-pressed="false"
+            >
+              PYTHON
+            </button>
+            <button
+              class="project-filter"
+              type="button"
+              data-filter="voice-ai"
+              aria-pressed="false"
+            >
+              VOICE AI
+            </button>
+          </div>
+          <span
+            class="filter-result"
+            id="project-filter-result"
+            aria-live="polite"
           >
+            SHOWING 3 PROJECTS
+          </span>
+        </nav>
+
+        <article
+          class="project-entry"
+          data-project
+          data-categories="ai computer-vision python"
+        >
+          <figure class="project-image-link">
             <img
               class="project-image"
               src="./Project%20Images/BridgeTheGap.png"
@@ -119,38 +178,70 @@
               height="675"
               fetchpriority="high"
             />
-            <span class="project-image-arrow" aria-hidden="true">↗</span>
-          </a>
+            <figcaption class="project-image-caption">
+              <span>REAL-TIME ISL RECOGNITION</span>
+              <span>PYTHON · COMPUTER VISION</span>
+            </figcaption>
+          </figure>
           <div class="project-content">
-            <p class="project-category">
-              AI-POWERED INDIAN SIGN LANGUAGE TRANSLATION
-            </p>
-            <h2>BridgeTheGap</h2>
+            <div class="project-heading">
+              <span class="project-index">01 / 03</span>
+              <p class="project-category">AI · ACCESSIBILITY</p>
+            </div>
+            <h2 id="project-bridge-title">BridgeTheGap</h2>
             <p class="project-description">
-              An AI-driven system that translates Indian Sign Language into
-              audible speech using computer vision, MediaPipe, and deep
-              learning. I led a four-member team to develop the core
-              recognition pipeline.
+              A real-time Indian Sign Language fingerspelling system that
+              detects hand landmarks and turns recognized gestures into text.
+              Built with a four-member team, the project routes one- and
+              two-hand signs to specialized classifiers.
             </p>
-            <a
-              class="project-link"
-              href="https://github.com/divyamsingh007/BridgeTheGap"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VIEW PROJECT ON GITHUB <span aria-hidden="true">↗</span>
-            </a>
+            <ul class="project-facts" aria-label="BridgeTheGap project scope">
+              <li><strong>26</strong><span>ISL letters</span></li>
+              <li><strong>02</strong><span>hand-specific models</span></li>
+              <li><strong>04</strong><span>team members</span></li>
+            </ul>
+            <ul class="project-tags" aria-label="Technologies used">
+              <li>Python</li>
+              <li>MediaPipe</li>
+              <li>OpenCV</li>
+              <li>TensorFlow / Keras</li>
+              <li>scikit-learn</li>
+            </ul>
+            <div class="project-actions" aria-label="BridgeTheGap links">
+              <button
+                class="project-action is-unavailable"
+                type="button"
+                disabled
+                title="BridgeTheGap has no hosted live demo."
+              >
+                LIVE UNAVAILABLE
+              </button>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/BridgeTheGap"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GITHUB <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/BridgeTheGap/blob/master/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DOCUMENTATION <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </article>
 
-        <article class="project-entry">
-          <a
-            class="project-image-link"
-            href="https://himadri.nith.org.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit the HBH Platform"
-          >
+        <article
+          class="project-entry"
+          data-project
+          data-categories="full-stack"
+        >
+          <figure class="project-image-link">
             <img
               class="project-image"
               src="./Project%20Images/HBH%20Platform.png"
@@ -160,37 +251,69 @@
               loading="lazy"
               decoding="async"
             />
-            <span class="project-image-arrow" aria-hidden="true">↗</span>
-          </a>
+            <figcaption class="project-image-caption">
+              <span>HOSTEL SERVICES · ONE PLACE</span>
+              <span>REACT · NODE.JS</span>
+            </figcaption>
+          </figure>
           <div class="project-content">
-            <p class="project-category">
-              HOSTEL MANAGEMENT &amp; CAMPUS ECOSYSTEM
-            </p>
-            <h2>HBH Platform</h2>
+            <div class="project-heading">
+              <span class="project-index">02 / 03</span>
+              <p class="project-category">FULL STACK · CAMPUS</p>
+            </div>
+            <h2 id="project-hbh-title">HBH Platform</h2>
             <p class="project-description">
-              A full-stack platform built for Himadri Boys Hostel at NIT
-              Hamirpur, featuring authentication, complaint management, mess
-              menus, notices, profile management, and administrative analytics.
+              A shared digital home for Himadri Boys Hostel at NIT Hamirpur.
+              Students manage everyday hostel needs while administrators handle
+              notices, complaints, records, and academic information.
             </p>
-            <a
-              class="project-link"
-              href="https://himadri.nith.org.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VISIT LIVE PLATFORM <span aria-hidden="true">↗</span>
-            </a>
+            <ul class="project-facts" aria-label="HBH Platform project scope">
+              <li><strong>05</strong><span>student services</span></li>
+              <li><strong>07</strong><span>admin workflows</span></li>
+              <li><strong>03</strong><span>access roles</span></li>
+            </ul>
+            <ul class="project-tags" aria-label="Technologies used">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>MongoDB</li>
+              <li>Tailwind CSS</li>
+            </ul>
+            <div class="project-actions" aria-label="HBH Platform links">
+              <a
+                class="project-action project-action-primary"
+                href="https://himadri.nith.org.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LIVE <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/HimadriAllinOnePlatform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GITHUB <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/HimadriAllinOnePlatform/blob/main/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DOCUMENTATION <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </article>
 
-        <article class="project-entry">
-          <a
-            class="project-image-link"
-            href="https://samvaadai-nmnh.onrender.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit SamvaadAI"
-          >
+        <article
+          class="project-entry"
+          data-project
+          data-categories="ai full-stack voice-ai"
+        >
+          <figure class="project-image-link">
             <img
               class="project-image"
               src="./Project%20Images/SamvaadAI.png"
@@ -200,27 +323,67 @@
               loading="lazy"
               decoding="async"
             />
-            <span class="project-image-arrow" aria-hidden="true">↗</span>
-          </a>
+            <figcaption class="project-image-caption">
+              <span>RESUME → VOICE → FEEDBACK</span>
+              <span>REACT · DJANGO REST</span>
+            </figcaption>
+          </figure>
           <div class="project-content">
-            <p class="project-category">AI-POWERED VOICE INTERVIEW AGENT</p>
-            <h2>SamvaadAI</h2>
+            <div class="project-heading">
+              <span class="project-index">03 / 03</span>
+              <p class="project-category">AI · INTERVIEW PRACTICE</p>
+            </div>
+            <h2 id="project-samvaad-title">SamvaadAI</h2>
             <p class="project-description">
-              An intelligent mock interview platform that generates
-              role-specific questions from resumes, captures spoken responses,
-              transcribes answers, and evaluates performance through semantic
-              analysis.
+              A mock interview practice platform that turns a resume and
+              chosen role into spoken interview rounds, then transcribes and
+              evaluates answers with structured feedback.
             </p>
-            <a
-              class="project-link"
-              href="https://samvaadai-nmnh.onrender.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              VISIT SAMVAADAI <span aria-hidden="true">↗</span>
-            </a>
+            <ul class="project-facts" aria-label="SamvaadAI project scope">
+              <li><strong>06</strong><span>interview capabilities</span></li>
+              <li><strong>02</strong><span>AI provider options</span></li>
+              <li><strong>01</strong><span>structured practice report</span></li>
+            </ul>
+            <ul class="project-tags" aria-label="Technologies used">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Django REST</li>
+              <li>OpenAI / Gemini</li>
+              <li>Web Speech API</li>
+              <li>SQLite</li>
+            </ul>
+            <div class="project-actions" aria-label="SamvaadAI links">
+              <a
+                class="project-action project-action-primary"
+                href="https://samvaadai-nmnh.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LIVE <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/SamvaadAI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GITHUB <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="project-action"
+                href="https://github.com/divyamsingh007/SamvaadAI/blob/master/README.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DOCUMENTATION <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </article>
+
+        <p class="project-empty" id="project-empty" hidden>
+          No projects match this technology yet.
+        </p>
       </section>
     </main>
 
@@ -233,5 +396,39 @@
         RESUME <span aria-hidden="true">↓</span>
       </a>
     </footer>
+    <script>
+      const projectFilters = document.querySelectorAll(".project-filter");
+      const projectEntries = document.querySelectorAll("[data-project]");
+      const projectFilterResult = document.getElementById(
+        "project-filter-result",
+      );
+      const projectEmpty = document.getElementById("project-empty");
+
+      projectFilters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+          const selectedCategory = filter.dataset.filter;
+          let visibleCount = 0;
+
+          projectFilters.forEach((option) => {
+            const isSelected = option === filter;
+            option.classList.toggle("is-active", isSelected);
+            option.setAttribute("aria-pressed", String(isSelected));
+          });
+
+          projectEntries.forEach((project) => {
+            const categories = project.dataset.categories.split(" ");
+            const isVisible =
+              selectedCategory === "all" ||
+              categories.includes(selectedCategory);
+            project.hidden = !isVisible;
+            if (isVisible) visibleCount += 1;
+          });
+
+          projectFilterResult.textContent =
+            `SHOWING ${visibleCount} ${visibleCount === 1 ? "PROJECT" : "PROJECTS"}`;
+          projectEmpty.hidden = visibleCount > 0;
+        });
+      });
+    </script>
   </body>
 </html>
