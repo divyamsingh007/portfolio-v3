@@ -349,7 +349,12 @@
         );
       }
 
-      #about > .sticky,
+      #about > .sticky {
+        top: 0;
+        height: 100vh;
+        height: 100dvh;
+      }
+
       #exp-sticky-viewport {
         top: var(--navigation-height);
         height: calc(100dvh - var(--navigation-height));
@@ -1023,9 +1028,10 @@
 
         #about > .sticky {
           position: sticky;
-          height: calc(100vh - var(--navigation-height));
-          height: calc(100svh - var(--navigation-height));
-          min-height: calc(100svh - var(--navigation-height));
+          top: 0;
+          height: 100vh;
+          height: 100svh;
+          min-height: 100svh;
           overflow: hidden;
         }
 
