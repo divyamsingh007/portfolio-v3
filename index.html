@@ -340,7 +340,6 @@
       }
 
       #home,
-      #about,
       #skills,
       #projects,
       #contact {
@@ -349,10 +348,32 @@
         );
       }
 
+      #about {
+        scroll-margin-top: env(safe-area-inset-top);
+      }
+
       #about > .sticky {
         top: 0;
         height: 100vh;
         height: 100dvh;
+      }
+
+      #sem-media-content {
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: none;
+      }
+
+      #sem-media-content::-webkit-scrollbar {
+        display: none;
+      }
+
+      #sem-media-content > div:first-child,
+      #sem-media-content > div:nth-child(2),
+      #sem-media-content > div:last-child {
+        width: 100%;
+        max-width: 80rem;
+        margin-inline: auto;
       }
 
       #exp-sticky-viewport {
@@ -964,6 +985,42 @@
 
         #desktop-navigation a {
           padding-inline: 0.875rem;
+        }
+      }
+
+      @media (min-width: 1024px) and (max-height: 900px) {
+        #sem-media-content {
+          justify-content: flex-start;
+          gap: 1.5rem;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+        }
+
+        #sem-media-content::-webkit-scrollbar {
+          display: block;
+          width: 4px;
+        }
+
+        #sem-media-content::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.25);
+          border-radius: 999px;
+        }
+
+        #sem-media-content > div:nth-child(2) {
+          flex: none;
+          min-height: 0;
+          align-items: stretch;
+          justify-content: flex-start;
+          padding: 1rem 0;
+        }
+
+        #sem-media-content > div:nth-child(2) > div {
+          height: auto;
+          justify-content: flex-start;
+        }
+
+        #sem-media-content > div:nth-child(2) > div:first-child {
+          margin-bottom: 1rem;
         }
       }
 
@@ -1751,6 +1808,7 @@
     >
       <div
         id="mobile-drawer-content"
+        data-lenis-prevent
         class="mobile-drawer-content w-4/5 max-w-sm bg-white h-full max-h-[100dvh] overflow-y-auto overscroll-contain flex flex-col justify-start gap-8 transform translate-x-full transition-transform duration-300 shadow-2xl"
       >
         <div>
@@ -2023,6 +2081,7 @@
                 <!-- Minimal Aesthetic About Info - Perimeter Layout with Empty Center -->
                 <div
                   id="sem-media-content"
+                  data-lenis-prevent
                   class="absolute inset-0 z-20 flex flex-col justify-between p-5 sm:p-7 md:p-9 pointer-events-none opacity-0 transition-all duration-300 select-none"
                 >
                   <!-- Top Perimeter: Refined Monochrome Headline -->
@@ -2073,7 +2132,7 @@
                       >
                         <!-- 01: Beginning -->
                         <div
-                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-[#070709]/80 p-5 sm:p-6 md:p-7 hover:bg-[#070709]/90 transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2101,7 +2160,7 @@
 
                         <!-- 02: Engineering -->
                         <div
-                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-[#070709]/80 p-5 sm:p-6 md:p-7 hover:bg-[#070709]/90 transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2130,7 +2189,7 @@
 
                         <!-- 03: Exploration -->
                         <div
-                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-[#070709]/80 p-5 sm:p-6 md:p-7 hover:bg-[#070709]/90 transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -2159,7 +2218,7 @@
 
                         <!-- 04: Vision -->
                         <div
-                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-white/[0.035] p-5 sm:p-6 md:p-7 hover:bg-white/[0.07] transition-colors duration-300"
+                          class="reveal-motion about-reveal about-reveal-card group border border-white/15 rounded-xl bg-[#070709]/80 p-5 sm:p-6 md:p-7 hover:bg-[#070709]/90 transition-colors duration-300"
                         >
                           <div class="flex items-center justify-between mb-6">
                             <span
@@ -3747,12 +3806,14 @@
       updateBackToTopVisibility();
 
       backToTop.addEventListener("click", () => {
+        if (window.lenis) {
+          window.lenis.scrollTo(0);
+          return;
+        }
+
         window.scrollTo({
           top: 0,
-          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-            .matches
-            ? "auto"
-            : "smooth",
+          behavior: "auto",
         });
       });
       // Cart state
@@ -4405,6 +4466,7 @@
       }
     </script>
 
+    <script type="module" src="./smooth-scroll.js"></script>
     <script type="module" src="./scroll-expand-media.js"></script>
     <script type="module" src="./experience-section.js"></script>
   </body>
