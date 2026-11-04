@@ -1303,6 +1303,7 @@
 
         #exp-sticky-viewport {
           position: relative !important;
+          top: 0;
           height: auto;
           min-height: 100svh;
           overflow: hidden;
@@ -1381,6 +1382,7 @@
 
         #exp-sticky-viewport {
           position: relative !important;
+          top: 0;
           height: auto;
           min-height: 100svh;
           overflow: hidden;
@@ -1499,7 +1501,7 @@
 
     <!-- BEGIN: Navigation Header -->
     <header
-      class="page-container top-0 z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 grid grid-cols-[1fr_auto_1fr] items-center space-x-20"
+      class="page-container top-0 z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-x-3 lg:gap-x-8"
       data-purpose="site-navigation"
     >
       <!-- Brand Wordmark -->
@@ -3478,14 +3480,14 @@
 
     <!-- BEGIN: Featured Project Section -->
     <section
-      class="page-container py-16"
+      class="page-container py-16 md:py-24"
       data-purpose="featured-projects"
       id="projects"
     >
       <!-- Header -->
-      <div class="mb-8">
+      <div class="mb-8 border-b border-neutral-200 pb-6 md:mb-10">
         <h2
-          class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900"
+          class="text-[clamp(2rem,5vw,3.25rem)] leading-none font-black uppercase tracking-tight text-neutral-900"
         >
           FEATURED PROJECT
         </h2>
