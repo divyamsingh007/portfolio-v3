@@ -1424,10 +1424,6 @@
           min-height: 44px;
         }
 
-        #contact .footer-metallic-title {
-          font-size: clamp(2.75rem, 13vw, 5rem);
-        }
-
         #contact > div {
           padding-bottom: max(3rem, env(safe-area-inset-bottom));
         }
@@ -1560,6 +1556,7 @@
       }
     </style>
     <link rel="stylesheet" href="./site-chrome.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
   <body class="antialiased text-[#111] bg-[#FAFAFA]">
     <!-- Notification Toast Container -->
@@ -3613,73 +3610,109 @@
     <!-- END: Featured Project Section -->
 
     <!-- BEGIN: Contact / Let's Talk Footer -->
-    <footer
-      class="w-full bg-[#0D0D0D] text-white pt-20 pb-12 mt-12"
-      data-purpose="footer-section"
-      id="contact"
-    >
-      <div class="page-container flex flex-col items-center">
-        <!-- Metallic Callout Headline -->
-        <div class="w-full text-center py-6 md:py-10">
-          <h2
-            class="text-[12vw] md:text-[8rem] lg:text-[10rem] font-black uppercase leading-none tracking-tight footer-metallic-title select-none cursor-pointer"
-          >
-            <a href="./contact.html">LET'S TALK</a>
+    <footer class="site-footer" data-purpose="footer-section" id="contact">
+      <div class="page-container site-footer-inner">
+        <div class="site-footer-lead">
+          <h2 class="site-footer-title footer-metallic-title">
+            <a href="./contact.html">
+              LET'S TALK
+              <span class="site-footer-title-arrow" aria-hidden="true">↗</span>
+            </a>
           </h2>
+
+          <div class="site-footer-invite">
+            <p>
+              Have an opportunity, a project, or a question? Send a note and
+              start the conversation.
+            </p>
+            <a class="site-footer-email" href="mailto:reach@divyamsingh.dev">
+              <span>reach@divyamsingh.dev</span>
+              <span class="site-footer-email-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="site-footer-contact-link" href="./contact.html">
+              OR USE THE CONTACT FORM <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Action Button Pills -->
-        <div
-          class="flex flex-wrap items-center justify-center gap-3.5 mt-8 mb-20"
-        >
-          <a
-            class="button button-quiet-on-dark button-pill"
-            href="https://www.instagram.com/btwimdivyam/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            INSTAGRAM
-          </a>
-          <a
-            class="button button-quiet-on-dark button-pill"
-            href="https://www.linkedin.com/in/divyam-singh-duhoon/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LINKEDIN
-          </a>
-          <a
-            class="button button-quiet-on-dark button-pill"
-            href="https://github.com/divyamsingh007"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GITHUB
-          </a>
-          <a
-            class="button button-quiet-on-dark button-pill"
-            href="https://codolio.com/profile/divyamsingh007"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CODOLIO
-          </a>
-          <a
-            href="./contact.html"
-            class="button button-on-dark button-pill hover:scale-105"
-          >
-            CONTACT ME
-          </a>
+        <div class="site-footer-rule" aria-hidden="true"></div>
+
+        <div class="site-footer-navigation">
+          <div class="site-footer-identity">
+            <a
+              class="site-footer-wordmark"
+              href="#home"
+              aria-label="Divyam Singh home"
+            >
+              DIV<span aria-hidden="true">.</span>
+            </a>
+            <p>
+              Building full-stack systems and exploring AI, ML, and computer
+              vision.
+            </p>
+          </div>
+
+          <nav class="site-footer-column" aria-label="Footer navigation">
+            <h3>EXPLORE</h3>
+            <a href="#about">ABOUT</a>
+            <a href="#experience">EXPERIENCE</a>
+            <a href="./experiences.html">FULL EXPERIENCE <span aria-hidden="true">↗</span></a>
+            <a href="#projects">PROJECTS</a>
+            <a href="./projects.html">ALL PROJECTS <span aria-hidden="true">↗</span></a>
+          </nav>
+
+          <nav class="site-footer-column" aria-label="Social profiles">
+            <h3>CONNECT</h3>
+            <a
+              href="https://github.com/divyamsingh007"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GITHUB <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/divyam-singh-duhoon/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LINKEDIN <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://www.instagram.com/btwimdivyam/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              INSTAGRAM <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://codolio.com/profile/divyamsingh007"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CODOLIO <span aria-hidden="true">↗</span>
+            </a>
+          </nav>
+
+          <div class="site-footer-column">
+            <h3>RESUME</h3>
+            <a
+              class="site-footer-resume-link"
+              href="./assets/Divyam_Singh_Resume.pdf"
+              download="Divyam_Singh_Resume.pdf"
+            >
+              DOWNLOAD PDF <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Bottom Credits Bar -->
-        <div
-          class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-600 font-semibold gap-4"
-        >
-          <div>PORTFOLIO. ALL RIGHTS RESERVED</div>
+        <div class="site-footer-bottom">
+          <p>
+            © <time id="footer-year" datetime="2026">2026</time> DIVYAM SINGH.
+            ALL RIGHTS RESERVED.
+          </p>
         </div>
       </div>
-      <!-- Back to Top -->
+
       <button
         id="back-to-top"
         aria-label="Back to top"
@@ -4326,6 +4359,13 @@
 
       // Initialize application
       function initApp() {
+        const footerYear = document.getElementById("footer-year");
+        if (footerYear) {
+          const currentYear = String(new Date().getFullYear());
+          footerYear.dateTime = currentYear;
+          footerYear.textContent = currentYear;
+        }
+
         const siteNavigation = document.querySelector(
           '[data-purpose="site-navigation"]',
         );
